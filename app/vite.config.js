@@ -10,5 +10,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
-  base: '/{repo}/' 
+  base: '/space-tourism-website-main/' 
 })
