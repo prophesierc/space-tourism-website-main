@@ -15,8 +15,6 @@
   
   <script setup>
   // Passes explicitly the component name as object inside defineOptions function
-  defineOptions({ 
-    name: 'ImageHandler'
-  });
+  defineOptions({ name: 'ImageHandler'});
   </script>
   
