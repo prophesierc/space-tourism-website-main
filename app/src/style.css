@@ -6,4 +6,7 @@
   :root {
     --ff-barlow-condensed: 'Barlow Condensed', sans-serif; /* Combined font family */
   }
+  body{
+    overflow: hidden;
+  }
 }
