@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --ff-barlow-condensed: 'Barlow Condensed', sans-serif; /* Combined font family */
+    --ff-barlow-condensed: 'Barlow Condensed', sans-serif; 
+    --ff-bellefair: 'Bellefair', sans-serif; 
   }
   body{
     overflow: hidden;
