@@ -1,5 +1,5 @@
 <template>
-  <v-container class="p-6 flex justify-between items-center" 
+  <v-container class="p-6 flex justify-between items-center absolute top-0 left-0" 
     style="font-family: var(--ff-barlow-condensed);">
 
     <v-row align="center" justify="space-between" class="w-full">
@@ -73,11 +73,3 @@ const drawer = ref(false);
 
 defineOptions({ name: 'NavBar' });
 </script>
-
-<style scoped>
-.custom-item {
-  font-size: 1.5rem !important;
-  letter-spacing: 0.5rem !important;
-}
-</style>
-
