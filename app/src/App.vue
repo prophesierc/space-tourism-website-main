@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <main>
+      <HomeContent />
       <ImageHandler />
       <NavBar />
-      <HomeContent />
     </main>
   </v-app>
 </template>
