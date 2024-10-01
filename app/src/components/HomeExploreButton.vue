@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="flex mt-auto">
       <v-row align="center" justify="center">
         <v-col cols="auto">
           <v-btn 
@@ -10,10 +10,12 @@
             :loading="loading" 
             @click="startLoading">
             <template v-slot:loader>
+
               <v-progress-circular 
                 :model-value="progress" 
                 :size="144">
               </v-progress-circular>
+
             </template>
           </v-btn>
         </v-col>

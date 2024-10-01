@@ -1,9 +1,9 @@
 <template>
     <div id="home__content__container" 
-    class="absolute w-auto h-auto" 
+    class="absolute w-auto h-screen" 
     style="font-family: var(--ff-barlow-condensed);">
         <div id="content__container" 
-        class="flex flex-column justify-center align-center m-4 h-[52rem]">
+        class="flex flex-column justify-center align-center m-4 mt-20 h-[40rem]">
 
             <h1 class="text-[16px] tracking-widest text-[#d0d6f9]">
                 SO, YOU WANT TO TRAVEL TO</h1>
