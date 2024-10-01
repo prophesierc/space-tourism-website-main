@@ -11,5 +11,5 @@
 <script setup>
 import ImageHandler from '@/components/ImageHandler.vue';
 import NavBar from '@/components/NavBar.vue';
-import HomeContent from '@/components/HomeContent.vue';
+import HomeContent from '@/components/HomeComponents/HomeContent.vue';
 </script>

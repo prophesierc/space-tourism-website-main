@@ -6,7 +6,8 @@
             icon=""
             text="EXPLORE"
             size="144" 
-            href="https://google.com"
+            href="@/components/DestinationComponents/Destination.vue"
+            style="font-family: var(--ff-bellefair)"
             :loading="loading" 
             @click="startLoading">
             <template v-slot:loader>
