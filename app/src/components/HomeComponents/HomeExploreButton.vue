@@ -4,12 +4,12 @@
         <v-col cols="auto">
           <v-btn 
             icon=""
-            text="EXPLORE"
             size="144" 
-            href="@/components/DestinationComponents/Destination.vue"
+            text="EXPLORE"
             style="font-family: var(--ff-bellefair)"
             :loading="loading" 
-            @click="startLoading">
+            @click="startLoading"
+            to="/destination">
             <template v-slot:loader>
 
               <v-progress-circular 

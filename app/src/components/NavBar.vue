@@ -1,5 +1,5 @@
 <template>
-  <v-container c
+  <v-container
     class="flex absolute top-0 left-0" 
     style="font-family: var(--ff-barlow-condensed);">
 
@@ -31,7 +31,8 @@
       <v-list density="default" width=100% ripple rounded nav 
         class="mt-20 text-white flex flex-column pl-8">
       
-      <v-list-item value="home">
+      <v-list-item value="home"
+      to="/">
         <template v-slot:prepend>
           <p class="pr-3 font-bold text-base tracking-widest">00</p>
         </template>
@@ -40,7 +41,8 @@
         </template>
       </v-list-item>
 
-      <v-list-item value="destination">
+      <v-list-item value="destination"
+      to="/destination">
         <template v-slot:prepend>
           <p class="pr-3 font-bold text-base tracking-widest">01</p>
         </template>

@@ -1,33 +1,27 @@
-import App from '@/App.vue'
-import { createApp } from 'vue'
-import '@/style.css'
+import { createApp } from 'vue';
+import App from '@/App.vue';
+import '@/style.css';
 
-//VueRouter
-import { createMemoryHistory, createRouter } from 'vue-router'
-import App from '@/App.vue'
-import Destination from '@/routes/Destination'
+// VueRouter
+import { createWebHistory, createRouter } from 'vue-router';
+import Destination from '@/routes/Destination.vue';
 
 const routes = [
-  { path: '@/', component: App },
-  { path: '@/routes/Destination', component: Destination },
-]
+  { path: '/', component: App }, 
+  { path: '/destination', component: Destination },
+];
 
 const router = createRouter({
-  history: createMemoryHistory(),
+  history: createWebHistory('/space-tourism-website-main/'), 
   routes,
-})
+});
 
-// Vuetify
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
+// Vuetify setup
+const vuetify = createVuetify({ components, directives });
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
 
-// Components
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
 
-const vuetify = createVuetify({
-  components,
-  directives,
-})
-
-createApp(App).use(vuetify).use(router).mount('#app')
+createApp(App).use(vuetify).use(router).mount('#app');
