@@ -14,7 +14,7 @@
 </template>
 
 <script setup>
-  import ImageHandler from '@/components/ImageHandler.vue';
+  import ImageHandler from '@/components/props/ImageHandler.vue';
   import NavBar from '@/components/NavBar.vue';
   import HomeContent from '@/components/HomeComponents/HomeContent.vue';
 

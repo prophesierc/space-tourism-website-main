@@ -1,12 +1,12 @@
 <template>
-    <v-container class="flex mt-auto">
-      <v-row align="center" justify="center">
-        <v-col cols="auto">
+    <v-container class="flex h-full mt-auto">
+      <v-row align="center" justify="center" class="flex h-full mt-auto">
+        <v-col cols="auto" class="flex h-80 items-end">
           <v-btn 
             icon=""
             size="144" 
             text="EXPLORE"
-            style="font-family: var(--ff-bellefair)"
+            style="font-family: var(--ff-bellefair);"
             :loading="loading" 
             @click="startLoading"
             to="/destination">

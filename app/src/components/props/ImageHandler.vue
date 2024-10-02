@@ -1,11 +1,11 @@
 <template>
-  <header 
+  <div 
     id="background__container" 
-    class="flex justify-center align-center w-screen min-h-screen z-0">
-    
-    <picture 
-      id="background__picture" 
-      class="flex w-screen h-screen">
+    class="flex justify-center items-center w-screen h-screen min-h-screen overflow-hidden">
+  
+  <picture 
+    id="background__picture" 
+    class="flex w-screen h-screen min-h-screen overflow-hidden">
 
       <!-- Mobile Image -->
       <source 
@@ -36,7 +36,7 @@
       >
 
     </picture>
-  </header>
+  </div>
 </template>
   
 <script setup>
