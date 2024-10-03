@@ -3,7 +3,7 @@
       <v-row align="center" justify="center" class="flex h-full mt-auto">
         <v-col cols="auto" class="flex h-80 items-end">
           <v-btn 
-            icon=""
+            icon=''
             size="144" 
             text="EXPLORE"
             style="font-family: var(--ff-bellefair);"

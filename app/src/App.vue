@@ -1,7 +1,11 @@
 <template>
   <v-app>
     <main>
-      <router-view />
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
       <NavBar />
       <HomeContent />
       <ImageHandler 
@@ -14,14 +18,14 @@
 </template>
 
 <script setup>
-  import ImageHandler from '@/components/props/ImageHandler.vue';
-  import NavBar from '@/components/NavBar.vue';
-  import HomeContent from '@/components/HomeComponents/HomeContent.vue';
+import ImageHandler from '@/components/props/ImageHandler.vue';
+import NavBar from '@/components/NavBar.vue';
+import HomeContent from '@/components/HomeComponents/HomeContent.vue';
 
-  //ImageHandler prop images
-  import BackgroundHomeMobile from '@/assets/home/background-home-mobile.jpg';
-  import BackgroundHomeTablet from '@/assets/home/background-home-tablet.jpg';
-  import BackgroundHomeDesktop from '@/assets/home/background-home-desktop.jpg';
+// ImageHandler prop images
+import BackgroundHomeMobile from '@/assets/home/background-home-mobile.jpg';
+import BackgroundHomeTablet from '@/assets/home/background-home-tablet.jpg';
+import BackgroundHomeDesktop from '@/assets/home/background-home-desktop.jpg';
 
-  defineOptions({ name: 'App' });
+defineOptions({ name: 'App' });
 </script>

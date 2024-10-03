@@ -3,34 +3,35 @@
     id="background__container" 
     class="flex justify-center items-center w-screen h-screen min-h-screen overflow-hidden">
   
+  
   <picture 
     id="background__picture" 
     class="flex w-screen h-screen min-h-screen overflow-hidden">
 
       <!-- Mobile Image -->
       <source 
-        media="(max-width: 450px)" 
-        :srcset=mobileImage
+        media="(max-width: 449px)" 
+        v-lazy="mobileImage"
         alt="Background Picture Mobile"
       >
 
       <!-- Tablet Image -->
       <source 
-        media="(max-width: 610px)" 
-        :srcset=tabletImage
+        media="(max-width: 609px)" 
+        v-lazy="tabletImage"
         alt="Background Picture Tablet"
       >
 
       <!-- Desktop Image -->
       <source 
-        media="(min-width: 611px)" 
-        :srcset=desktopImage
+        media="(min-width: 610px)" 
+        v-lazy="desktopImage"
         alt="Background Picture Desktop"
       >
 
       <!-- Default image -->
       <img 
-        :src=mobileImage 
+        v-lazy="tabletImage"
         alt="Background Picture" 
         class="object-cover w-screen h-screen"
       >
