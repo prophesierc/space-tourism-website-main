@@ -9,15 +9,16 @@
             style="font-family: var(--ff-bellefair);"
             :loading="loading" 
             @click="startLoading"
-            to="/destination">
+          >
+            
             <template v-slot:loader>
-
-              <v-progress-circular 
-                :model-value="progress" 
-                :size="144">
-              </v-progress-circular>
-
+              <v-progress-circular
+                color="amber"
+                size=144
+                indeterminate
+              ></v-progress-circular>
             </template>
+
           </v-btn>
         </v-col>
       </v-row>
@@ -26,28 +27,17 @@
   
   <script setup>
   import { ref } from 'vue';
-  const loading = ref(false);
-  const progress = ref(0);
+  import { useRouter } from 'vue-router';
   
-  const startLoading = () => 
+  const router = useRouter();
+  const loading = ref(false);
+
+  const startLoading = async () => 
   {
     loading.value = true;
-    progress.value = 0;
-  
-    const interval = setInterval(() => 
-    {
-      if (progress.value < 100) 
-      {
-        progress.value += 10;
-      } 
-      else 
-      {
-        clearInterval(interval);
-        loading.value = false; 
-      }
-    }, 200);
+    await router.push('/destination'); 
+    loading.value = false;
   };
-  
   defineOptions({ name: 'HomeExploreButton' });
   </script>
   

@@ -3,7 +3,7 @@
     <main>
       <router-view />
       <NavBar />
-      <MoonContent />
+      <DestinationsProps />
       <ImageHandler 
       :mobileImage="BackgroundDestinationMobile"
       :tabletImage="BackgroundDestinationTablet"
@@ -14,9 +14,9 @@
 </template>
 
 <script setup>
-  import ImageHandler from '@/components/props/ImageHandler.vue';
-  import NavBar from '@/components/NavBar.vue';
-  import MoonContent from '@/components/DestinationComponents/MoonComponents/MoonContent.vue';
+  import ImageHandler from '@/components/props/ImageHandlerProp/ImageHandler.vue';
+  import NavBar from '@/components/components/NavBarComponent/NavBar.vue';
+  import DestinationsProps from '@/components/props/DestinationProps/DestinationsProps.vue';
 
   //ImageHandler prop images
   import BackgroundDestinationMobile from '@/assets/destination/background-destination-mobile.jpg';

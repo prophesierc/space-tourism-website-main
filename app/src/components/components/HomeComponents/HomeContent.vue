@@ -26,6 +26,6 @@
 
 
 <script setup>
-  import HomeExploreButton from '@/components/HomeComponents/HomeExploreButton.vue';
+  import HomeExploreButton from '@/components/components/HomeComponents/HomeExploreButton.vue';
   defineOptions({ name: 'HomeContent'});
 </script>
