@@ -39,7 +39,7 @@
     {
         try 
         {
-            const response = await fetch('http://localhost:3000/destinations');
+            const response = await fetch('https://prophesierc.site/api/SpaceData');
             if (!response.ok) 
             {
                 throw new Error('Network response was not ok');
