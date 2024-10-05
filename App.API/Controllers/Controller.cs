@@ -19,11 +19,11 @@ namespace App.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<SpaceData>> GetSpaceData()
+        public async Task<ActionResult<SpaceData>> GetSpaceData([FromHeader(Name = "X-API-Key")] string apiKey)
         {
-            if (string.IsNullOrEmpty(_apiKey))
+            if (string.IsNullOrEmpty(apiKey) || apiKey != _apiKey)
             {
-                return Unauthorized("API key is missing.");
+                return Unauthorized("Invalid or missing API key.");
             }
 
             var filePath = Path.Combine(_environment.WebRootPath, "data", "data.json");

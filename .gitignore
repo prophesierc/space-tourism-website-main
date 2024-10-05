@@ -17,3 +17,5 @@
 
 .vs/
 .env
+
+App.API/nohup.out
