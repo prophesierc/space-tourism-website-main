@@ -26,6 +26,7 @@
   </template>
   
   <script setup>
+  defineOptions({ name: 'HomeExploreButton' });
   import { ref } from 'vue';
   import { useRouter } from 'vue-router';
   
@@ -38,6 +39,5 @@
     await router.push('/destination'); 
     loading.value = false;
   };
-  defineOptions({ name: 'HomeExploreButton' });
   </script>
   

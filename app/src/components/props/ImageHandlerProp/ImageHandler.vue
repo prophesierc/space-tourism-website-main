@@ -1,53 +1,45 @@
 <template>
   <div 
     id="background__container" 
-    class="flex justify-center items-center w-screen h-screen min-h-screen overflow-hidden">
-  
-  
-  <picture 
-    id="background__picture" 
-    class="flex w-screen h-screen min-h-screen overflow-hidden">
-
+    class="w-screen h-screen min-h-screen overflow-hidden">
+    
+    <picture class="w-full h-full">
       <!-- Mobile Image -->
-      <source 
-        media="(max-width: 449px)" 
-        v-lazy="mobileImage"
-        alt="Background Picture Mobile"
-      >
+      <source
+        media="(max-width: 449px)"
+        :srcset="mobileImage"
+      />
 
       <!-- Tablet Image -->
-      <source 
-        media="(max-width: 609px)" 
-        v-lazy="tabletImage"
-        alt="Background Picture Tablet"
-      >
+      <source
+        media="(max-width: 609px)"
+        :srcset="tabletImage"
+      />
 
       <!-- Desktop Image -->
-      <source 
-        media="(min-width: 610px)" 
-        v-lazy="desktopImage"
-        alt="Background Picture Desktop"
-      >
+      <source
+        media="(min-width: 610px)"
+        :srcset="desktopImage"
+      />
 
-      <!-- Default image -->
-      <img 
-        v-lazy="tabletImage"
-        alt="Background Picture" 
-        class="object-cover w-screen h-screen"
-      >
-
+      <!-- Fallback Image -->
+      <img
+        :src="mobileImage"
+        alt="Background Image"
+        class="object-cover w-full h-full"
+      />
     </picture>
+
   </div>
 </template>
-  
+
 <script setup>
+  defineOptions({ name: 'ImageHandler' });
+
   const props = defineProps(
   {
     mobileImage: String,
     tabletImage: String,
     desktopImage: String
   });
-
-  defineOptions({ name: 'ImageHandler'});
 </script>
-  
