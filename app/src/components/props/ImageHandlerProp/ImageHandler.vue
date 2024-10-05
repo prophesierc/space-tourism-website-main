@@ -1,7 +1,7 @@
 <template>
   <div 
     id="background__container" 
-    class="w-screen h-screen min-h-screen overflow-hidden">
+    class="w-screen h-screen min-h-screen">
     
     <picture class="w-full h-full">
       <!-- Mobile Image -->
@@ -32,6 +32,7 @@
 
   </div>
 </template>
+
 
 <script setup>
   defineOptions({ name: 'ImageHandler' });

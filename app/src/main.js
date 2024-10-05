@@ -13,7 +13,7 @@ import * as directives from 'vuetify/directives';
 // routes
 const routes = [
   { path: '/', component: App },
-  { path: '/destination', component: () => import('@/routes/Destination.vue') },
+  { path: '/destination', component: () => import('@/Routes/Destination.vue') },
 
   // Keep Alive assets
   { path: '/images', 

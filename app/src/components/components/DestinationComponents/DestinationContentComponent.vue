@@ -14,11 +14,11 @@
         <span> PICK YOUR DESTINATION </span>
       </span>    
       
-      <FetchDestinationImg :index="0" />
+      <DestinationImg :index="0" />
     </div>
   </div>
 </template>
 <script setup>
   defineOptions({ name: 'DestinationContentComponent' })
-  import FetchDestinationImg from '@/components/props/DestinationProps/FetchDestinationImg.vue';
+  import DestinationImg from '@/components/props/DestinationProps/DestinationImg.vue';
 </script>
