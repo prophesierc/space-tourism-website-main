@@ -10,12 +10,12 @@ namespace App.API.Controllers
     public class SpaceDataController : ControllerBase
     {
         private readonly IWebHostEnvironment _environment;
-        private required string _apiKey;
+        public required string _apiKey { get; init; }
 
         public SpaceDataController(IWebHostEnvironment environment, IConfiguration configuration)
         {
             _environment = environment;
-            _apiKey = configuration["ApiSettings:ApiKey"] ?? throw new ArgumentNullException("API key cannot be null.");
+            _apiKey = configuration["ApiSettings:ApiKey"] ?? throw new InvalidOperationException("API Key not found in configuration.");
         }
 
         [HttpGet]
