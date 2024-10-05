@@ -35,7 +35,7 @@
   const postData = ref([]);
 
   const getPost = async () => 
-  {
+{
     try 
     {
       const APIKey = import.meta.env.VITE_API_KEY; 
@@ -44,22 +44,22 @@
         method: 'GET',
         headers: 
         {
-          'X-API-Key': APIKey
+            'X-API-Key': APIKey
         }
       });
 
       if (!response.ok) 
       {
-        throw new Error('Network response was not ok');
+          throw new Error('Network response was not ok');
       }
       return await response.json();
     } 
     catch (error) 
     {
-      console.error('Fetch error:', error);
-      return [];
+        console.error('Fetch error:', error);
+        return [];
     }
-  };
+};
 
   onMounted(async () => 
   {
