@@ -5,11 +5,11 @@
   >
     <v-row align="center" justify="space-between" class="w-full">
       <v-col cols="auto">
-        <img 
+        <v-img 
            v-lazy="Logo"
           alt="Logo" 
           class="w-full h-full" 
-        />
+        ></v-img>
       </v-col>
       
       <v-col cols="auto"> 

@@ -14,9 +14,9 @@
 
 <script setup>
   defineOptions({ name: 'Destination' });
-  import NavBar from '@/components/components/NavBarComponent/NavBar.vue';
-  import DestinationContentComponent from '@/components/components/DestinationComponents/DestinationContentComponent.vue';
-  import ImageHandler from '@/components/props/ImageHandlerProp/ImageHandler.vue';
+  import NavBar from '@/Components/components/NavBarComponent/NavBar.vue';
+  import DestinationContentComponent from '@/Components/components/DestinationComponents/DestinationContentComponent.vue';
+  import ImageHandler from '@/Components/props/ImageHandlerProp/ImageHandler.vue';
 
   // ImageHandler prop images
   import BackgroundDestinationMobile from '@/assets/destination/background-destination-mobile.jpg';
