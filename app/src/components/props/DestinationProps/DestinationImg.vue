@@ -8,7 +8,17 @@
       v-if="index === props.index"
       :width="200"
       :src="destination.images.png" 
-    ></v-img>
+    >
+      <template v-slot:placeholder>
+        <div class="d-flex align-center justify-center fill-height">
+          <v-progress-circular
+            color="amber"
+            indeterminate
+          ></v-progress-circular>
+        </div>
+      </template>
+
+  </v-img>
   </div>
 </template>
 

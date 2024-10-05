@@ -18,6 +18,7 @@
     </div>
   </div>
 </template>
+
 <script setup>
   defineOptions({ name: 'DestinationContentComponent' })
   import DestinationImg from '@/Components/props/DestinationProps/DestinationImg.vue';
