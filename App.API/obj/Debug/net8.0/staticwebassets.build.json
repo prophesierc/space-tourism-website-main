@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yRSD9Hrjd5Fbrs1Kaf4He3FwVSJuL5fygDNKBxCsqg4=",
+  "Hash": "LLlG/Eda4iydf2FHK1tnJ6S7Gs30HBAkMNA0UeZo4dw=",
   "Source": "App.API",
   "BasePath": "_content/App.API",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "App.API/wwwroot",
+      "Name": "App.API\\wwwroot",
       "Source": "App.API",
-      "ContentRoot": "/var/www/prophesierc.site/prophesierc/App.API/wwwroot/",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/var/www/prophesierc.site/prophesierc/App.API/wwwroot/data/data.json",
+      "Identity": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\data\\data.json",
       "SourceId": "App.API",
       "SourceType": "Discovered",
-      "ContentRoot": "/var/www/prophesierc.site/prophesierc/App.API/wwwroot/",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\",
       "BasePath": "_content/App.API",
       "RelativePath": "data/data.json",
       "AssetKind": "All",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/data/data.json"
+      "OriginalItemSpec": "wwwroot\\data\\data.json"
     }
   ]
 }

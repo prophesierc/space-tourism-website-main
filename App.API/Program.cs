@@ -1,18 +1,18 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
+var apiKey = builder.Configuration["ApiSettings:ApiKey"];
 
-// Add CORS services
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:5173") // Your frontend URL
+        builder => builder.WithOrigins("http://localhost:5173") 
                           .AllowAnyHeader()
                           .AllowAnyMethod());
 });
+
 
 builder.Services.AddControllers();
 
@@ -25,7 +25,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 
-// Enable CORS
 app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();

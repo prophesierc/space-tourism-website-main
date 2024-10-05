@@ -1,23 +1,23 @@
 {
   "Files": [
     {
-      "Id": "/var/www/prophesierc.site/prophesierc/App.API/wwwroot/data/data.json",
-      "PackagePath": "staticwebassets/data/data.json"
+      "Id": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\data\\data.json",
+      "PackagePath": "staticwebassets\\data\\data.json"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.App.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.App.API.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.App.API.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.App.API.props",
       "PackagePath": "build\\App.API.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.App.API.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.App.API.props",
       "PackagePath": "buildMultiTargeting\\App.API.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.App.API.props",
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.App.API.props",
       "PackagePath": "buildTransitive\\App.API.props"
     }
   ],

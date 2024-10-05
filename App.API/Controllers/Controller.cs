@@ -1,5 +1,6 @@
 using App.API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration; 
 using System.Text.Json;
 
 namespace App.API.Controllers
@@ -9,15 +10,22 @@ namespace App.API.Controllers
     public class SpaceDataController : ControllerBase
     {
         private readonly IWebHostEnvironment _environment;
+        private readonly string _apiKey; 
 
-        public SpaceDataController(IWebHostEnvironment environment)
+        public SpaceDataController(IWebHostEnvironment environment, IConfiguration configuration)
         {
             _environment = environment;
+            _apiKey = configuration["ApiSettings:ApiKey"]; 
         }
 
         [HttpGet]
         public async Task<ActionResult<SpaceData>> GetSpaceData()
         {
+            if (string.IsNullOrEmpty(_apiKey))
+            {
+                return Unauthorized("API key is missing.");
+            }
+
             var filePath = Path.Combine(_environment.WebRootPath, "data", "data.json");
 
             if (System.IO.File.Exists(filePath))
