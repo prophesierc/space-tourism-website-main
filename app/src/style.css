@@ -8,7 +8,6 @@
     --ff-bellefair: 'Bellefair', sans-serif; 
   }
   html, body, main {
-    overflow: hidden;
     height: 100%;
     margin: 0;
     padding: 0;
