@@ -16,14 +16,16 @@
                 <v-btn
                     variant="plain"
                     :ripple="false"
+                    value="moon"
                     ><span 
-                    class="btn-text"
+                    class="btn-text" 
                     >MOON</span
                 ></v-btn>
 
                 <v-btn
                     variant="plain"
                     :ripple="false"
+                    value="mars"
                     ><span 
                     class="btn-text"
                     to="@Components/props/DestinationProps/Destinations/Mars.vue"
@@ -33,6 +35,7 @@
                 <v-btn
                     variant="plain"
                     :ripple="false"
+                    value="europa"
                     ><span 
                     class="btn-text"
                     >EUROPA</span
@@ -41,6 +44,7 @@
                 <v-btn
                     variant="plain"
                     :ripple="false"
+                    value="titan"
                     ><span 
                     class="btn-text"
                     >TITAN</span
@@ -58,7 +62,8 @@
   defineOptions({ name: 'DestinationNavigationDrawer' });
 
   import { ref } from 'vue';
-  const selectedButton = ref();
+  const selectedButton = ref('moon');
+  // defaults to moon
   </script>
   
   <style scoped>
