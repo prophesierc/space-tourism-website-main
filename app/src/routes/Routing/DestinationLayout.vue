@@ -3,9 +3,9 @@
         <NavBar />
         <DestinationContentComponent />
         <ImageHandler 
-          :mobileImage="BackgroundDestinationMobile"
-          :tabletImage="BackgroundDestinationTablet"
-          :desktopImage="BackgroundDestinationDesktop"
+        :mobileImage="BackgroundDestinationMobile"
+        :tabletImage="BackgroundDestinationTablet"
+        :desktopImage="BackgroundDestinationDesktop"
         />
     </v-app>
   </template>

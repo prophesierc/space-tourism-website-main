@@ -1,7 +1,7 @@
 <template>
   <div 
     id="destination__content__container" 
-    class="flex flex-col absolute w-full justify-center mt-[6em]" 
+    class="flex flex-col absolute w-full items-center mt-[6em] h-[25em]" 
     style="font-family: var(--ff-barlow-condensed);"
   >
     <div 
@@ -16,10 +16,14 @@
       
       <DestinationImg :index="0" />
     </div>
+
+    <DestinationNavigationDrawer />
   </div>
 </template>
 
 <script setup>
   defineOptions({ name: 'DestinationContentComponent' })
   import DestinationImg from '@/Components/props/DestinationProps/DestinationImg.vue';
+  import DestinationNavigationDrawer from '@/Components/components/DestinationComponents/DestinationNavigationDrawer.vue';
+
 </script>
