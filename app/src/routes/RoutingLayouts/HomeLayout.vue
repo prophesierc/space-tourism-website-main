@@ -13,7 +13,7 @@
   <script setup>
     defineOptions({ name: 'Layout' });
   
-    import ImageHandler from '@/Components/props/ImageHandlerProp/ImageHandler.vue';
+    import ImageHandler from '@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue';
     import NavBar from '@/Components/components/NavBarComponent/NavBar.vue';
     import HomeContent from '@/Components/components/HomeComponents/HomeContent.vue';
   

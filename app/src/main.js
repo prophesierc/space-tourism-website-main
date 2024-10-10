@@ -12,8 +12,8 @@ import * as directives from 'vuetify/directives';
 
 // Define routes
 const routes = [
-  { path: '/', component: () => import('@/Routes/Routing/HomeLayout.vue') }, 
-  { path: '/destination', component: () => import('@/Routes/Routing/DestinationLayout.vue') },
+  { path: '/', component: () => import('@/Routes/RoutingLayouts/HomeLayout.vue') }, 
+  { path: '/destination', component: () => import('@/Routes/RoutingLayouts/DestinationLayout.vue') },
 ];
 
 // Create the router
