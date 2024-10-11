@@ -13,14 +13,4 @@
     margin: 0;
     padding: 0;
   }
-
-  .v-btn[disabled] {
-    @apply text-white bg-transparent; 
-    opacity: 1;
-  }
-  
-  .v-btn[disabled] .btn-text {
-    color: white !important; /* Set desired text color */
-    border-bottom: 4px solid white; /* Set bottom border color */
-  }
 }
