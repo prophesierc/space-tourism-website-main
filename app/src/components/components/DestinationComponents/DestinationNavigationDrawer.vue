@@ -1,5 +1,5 @@
 <template>  
-  <v-list nav bg-color="transparent">
+  <v-list nav bg-color="transparent" class="pb-9">
     <v-container>
       <v-row justify="center">
         <v-col>

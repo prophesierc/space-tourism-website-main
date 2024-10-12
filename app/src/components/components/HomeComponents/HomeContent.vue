@@ -1,6 +1,6 @@
 <template>
     <div id="home__content__container" 
-    class="absolute w-auto h-screen flex flex-col justify-center" 
+    class="absolute w-auto h-screen flex flex-col justify-center " 
     style="font-family: var(--ff-barlow-condensed);">
         <div id="content__container" 
         class="flex flex-col justify-center align-center m-4 h-[34rem]">

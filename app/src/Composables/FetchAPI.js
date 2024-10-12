@@ -1,5 +1,4 @@
 import { onMounted, ref } from 'vue';
-
 export function FetchAPI()
 {
     const postData = ref([]);
