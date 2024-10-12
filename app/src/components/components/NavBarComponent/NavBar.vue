@@ -59,7 +59,7 @@
           </template>
         </v-list-item>
 
-        <v-list-item value="crew">
+        <v-list-item value="crew" to="/crew">
           <template v-slot:prepend>
             <p class="pr-3 font-bold text-base tracking-widest">02</p>
           </template>

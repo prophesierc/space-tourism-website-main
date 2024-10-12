@@ -1,7 +1,7 @@
 <template>
   <div 
     class="absolute flex flex-col items-center pb-10 min-h-96 h-full" 
-    v-for="(destination, index) in postData" 
+    v-for="(destination, index) in postData['destinations']" 
     :key="index">
     <keep-alive>
       <v-img
@@ -66,7 +66,7 @@
 </template>
 
 <script setup>
-  defineOptions({name: 'DestinationImg'})
+  defineOptions({name: 'DestinationSelector'})
   import { FetchAPI } from '@/Composables/FetchAPI';
   const { postData } = FetchAPI();
   const props = defineProps(

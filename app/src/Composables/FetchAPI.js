@@ -32,8 +32,7 @@ export function FetchAPI()
     onMounted(async () => 
     {
         const data = await getPost();
-        postData.value = data.destinations || []; 
+        postData.value = data || []; 
     });
-
     return { postData };
 }

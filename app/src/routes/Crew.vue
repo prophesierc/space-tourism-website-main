@@ -7,5 +7,5 @@
 </template>
 
 <script setup>
-  defineOptions({ name: 'Destination' });
+  defineOptions({ name: 'Crew' });
 </script>
