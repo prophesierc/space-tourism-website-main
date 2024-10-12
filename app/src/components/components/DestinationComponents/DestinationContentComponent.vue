@@ -5,9 +5,9 @@
     style="font-family: var(--ff-barlow-condensed);"
   >
     <div id="content__container" class="flex flex-col items-center mb-auto w-auto">
-      <span class="flex text-[16px] tracking-widest text-[#d0d6f9]">
+      <span class="flex text-[16px] tracking-widest ">
         <span class="font-bold pr-5 text-[#53555f]"> 01 </span>
-        <h1> PICK YOUR DESTINATION </h1>
+        <h1 class="text-white"> PICK YOUR DESTINATION </h1>
       </span>
 
         <DestinationSelector :index="value" />

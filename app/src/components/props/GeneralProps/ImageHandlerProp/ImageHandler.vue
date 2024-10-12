@@ -1,9 +1,9 @@
 <template>
   <div 
     id="background__container" 
-    class="w-screen h-screen min-w-[260px] min-h-[815px]">
+    class="w-screen min-w-[260px] min-h-[875px] flex">
     
-    <picture class="w-full h-full">
+    <picture class="flex w-full min-h-screen">
       <!-- Mobile Image -->
       <source
         media="(max-width: 449px)"
@@ -29,16 +29,14 @@
         class="object-cover w-full h-full"
       />
     </picture>
-
+    
   </div>
 </template>
 
-
 <script setup>
   defineOptions({ name: 'ImageHandler' });
-
-  const props = defineProps(
-  {
+  
+  const props = defineProps({
     mobileImage: String,
     tabletImage: String,
     desktopImage: String
