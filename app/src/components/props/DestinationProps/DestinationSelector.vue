@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="absolute flex flex-col items-center pb-10 min-h-96 h-full" 
+    class="absolute flex flex-col items-center pb-10 min-h-96 h-full " 
     v-for="(destination, index) in postData['destinations']" 
     :key="index">
     <keep-alive>
@@ -8,7 +8,7 @@
         v-if="index === props.index"
         :width="200"
         :src="destination.images.png" 
-        class="mb-10"
+        class="mb-10 "
         alt="Destination Image"
       >
         <template v-slot:placeholder>
@@ -33,7 +33,7 @@
             >{{destination.name.toUpperCase()}}
         </h2>
         <p 
-          class="text-[17px] text-center mx-8 tracking-tight font-[300] pr-5 text-[#d0d6f9]"
+          class="text-[16px] text-center mx-11 tracking-normal font-[300] text-[#d0d6f9]"
             >{{destination.description}}
             <span><hr class="h-px my-5 border-0 dark:bg-gray-700"></span>
           </p>

@@ -16,7 +16,7 @@
   import DestinationNavigationDrawer from '@/Components/components/DestinationComponents/DestinationNavigationDrawer.vue';
   import Header from '@/Components/props/GeneralProps/Header/Header.vue'
 
-  const crewPage = "01"; // Default to Moon
-  const crewintro = "PICK YOUR DESTINATION"; // Default to Moon
+  const crewPage = "01"; 
+  const crewintro = "PICK YOUR DESTINATION"; 
   const value = ref(0); // Default to Moon
 </script>
