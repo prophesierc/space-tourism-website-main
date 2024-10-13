@@ -30,22 +30,19 @@
                     {{ postData['crew'][0].bio }}
                     <!-- temp data fetch -->
                 </p>
+
                 
+                
+                <CrewCarousel />
             </div>
             
-            <v-img
-                :width="200"
-                :src="postData['crew'][0].images.png" 
-                class="flex flex-col justify-center items-center align-center"
-                alt="Crew Image"
-            />
-
         </div>
     </div>  
 </template>
 
 <script setup>
     defineOptions({ name: 'CrewContentComponent' })
+    import CrewCarousel from '@/Components/components/CrewComponents/CrewCarousel.vue'
     import Header from '@/Components/props/GeneralProps/Header/Header.vue'
     import { FetchAPI } from '@/Composables/FetchAPI';
 
