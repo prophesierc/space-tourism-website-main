@@ -8,13 +8,19 @@ var apiKey = builder.Configuration["ApiSettings:ApiKey"];
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:5173", "https://prophesierc.github.io") 
+        builder => builder.WithOrigins("http://localhost:5173", "https://prophesierc.github.io")
                           .AllowAnyHeader()
                           .AllowAnyMethod());
 });
 
-
 builder.Services.AddControllers();
+
+// Add logging services
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole();
+    logging.AddDebug();
+});
 
 var app = builder.Build();
 
@@ -32,3 +38,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
