@@ -63,7 +63,7 @@ namespace App.API.Controllers
         [HttpGet("proxy/data")]
         public async Task<ActionResult<SpaceData>> GetProxyData()
         {
-            var apiUrl = "https://prophesierc.site/api/SpaceData/data";
+            var apiUrl = "https://prophesierc.site/api/SpaceData/proxy/data";
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
 
             try
@@ -72,7 +72,8 @@ namespace App.API.Controllers
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    return StatusCode((int)response.StatusCode, "Error fetching data from external API.");
+                    var errorMessage = await response.Content.ReadAsStringAsync(); 
+                    return StatusCode((int)response.StatusCode, $"Error fetching data from external API: {errorMessage}");
                 }
 
                 var json = await response.Content.ReadAsStringAsync();
@@ -94,6 +95,7 @@ namespace App.API.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
     }
 
     public class SpaceData

@@ -6,7 +6,6 @@ export function FetchAPI()
     {
         try 
         {
-            const APIKey = import.meta.env.VITE_API_KEY; 
             const response = await fetch('https://prophesierc.site/api/SpaceData/proxy/data', 
             {
                 method: 'GET',
