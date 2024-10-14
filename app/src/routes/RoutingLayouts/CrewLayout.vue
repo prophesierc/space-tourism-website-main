@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="overflow-hidden">
     <CrewContentComponent />
     <NavBar />
     <ImageHandler 
