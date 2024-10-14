@@ -3,13 +3,13 @@
     class="absolute flex flex-col items-center pb-10 min-h-96 h-full " 
     v-for="(destination, index) in postData['destinations']" 
     :key="index">
-
+        <!-- :srcset="`${destination.images.png} 480w, ${destination.images.webp} 800w`"
+        sizes="(max-width: 600px) 480px, 800px" -->
     <keep-alive>
       <v-img
         v-if="index === props.index"
         :width="200"
-        :srcset="`${destination.images.png} 480w, ${destination.images.webp} 800w`"
-        sizes="(max-width: 600px) 480px, 800px"
+        
         :src="destination.images.png" 
         class="mb-10 "
         alt="Destination Image">

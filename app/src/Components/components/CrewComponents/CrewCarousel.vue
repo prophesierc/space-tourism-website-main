@@ -42,10 +42,10 @@
                 <img
                     :src="crew.images.png" 
                     :alt="`${crew.name}'s image`"
-                    :srcset="`${crew.images.png} 480w, ${crew.images.webp} 800w`"
-                    sizes="(max-width: 600px) 500px, 800px"
                     class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[375px] max-h-[500px]" 
                 />
+                <!-- :srcset="`${crew.images.png} 480w, ${crew.images.webp} 800w`"
+                    sizes="(max-width: 600px) 500px, 800px" -->
                 <!-- max-h-[500px] controls the height of the images on growth -->
 
             </v-carousel-item>
