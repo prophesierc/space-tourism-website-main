@@ -11,7 +11,7 @@
 </template>
     
 <script setup>
-    defineOptions({ name: 'CrewLayout' });
+    defineOptions({ name: 'TechnologyLayout' });
     import NavBar from '@/Components/components/NavBarComponent/NavBar.vue';
     import ImageHandler from '@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue';  
     import TechnologyContentComponents from '@/Components/components/TechnologyComponents/TechnologyContentComponents.vue'
