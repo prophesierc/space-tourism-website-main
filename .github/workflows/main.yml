@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to your default branch if it's different
+      - main  # Change this to your main branch name if different
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,18 +16,17 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'  # Specify the Node.js version you want
+          node-version: '16'  # Specify your Node.js version
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
-        env:
-          VITE_API_KEY: ${{ secrets.VITE_API_KEY }}  # Reference your secret here
+      - name: Build
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # Adjust this if your build output directory is different
+          publish_dir: ./dist
+          publish_branch: gh-page  # The branch you want to publish to
