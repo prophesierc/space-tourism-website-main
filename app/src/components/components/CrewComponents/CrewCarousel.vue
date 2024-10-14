@@ -1,21 +1,19 @@
 <template>
     <div v-if="postData['crew']" class="mt-10">
-        <v-carousel 
+        <v-carousel
             :show-arrows="false"
             color="white"
-            :cycle="false"
-            interval="5000"
+            :cycle="true"
+            interval="3500"
             :height="655"
             hide-delimiter-background
             hide-delimiters
             @change="updateCurrentIndex"
-            v-model="currentIndex"
-        >
+            v-model="currentIndex">
 
             <v-carousel-item
                 v-for="(crew, index) in postData['crew']"
-                :key="index"
-            >
+                :key="index">
 
                 <div 
                     class="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-b from-transparent to-black pointer-events-none">
@@ -35,7 +33,7 @@
                     </h3>
 
                     <p
-                        class="text-[16px] tracking-wide font-[300] text-[#d0d6f9] pb-10 px-7"
+                        class="text-[16px] tracking-wide font-[300] text-[#d0d6f9] px-7"
                         style="font-family: var(--ff-barlow-condensed)">
                         {{ crew.bio }}
                     </p>
@@ -46,12 +44,11 @@
                     :alt="`${crew.name}'s image`"
                     :srcset="`${crew.images.png} 480w, ${crew.images.webp} 800w`"
                     sizes="(max-width: 600px) 500px, 800px"
-                    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-auto max-h-[500px]" 
+                    class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[375px] max-h-[500px]" 
                 />
                 <!-- max-h-[500px] controls the height of the images on growth -->
 
             </v-carousel-item>
-
         </v-carousel>
 
         <div class="absolute bottom-[56%] left-1/2 transform -translate-x-1/2 flex space-x-5">
@@ -74,11 +71,8 @@
 
     const { postData } = FetchAPI();
     const currentIndex = ref(0);
-    function updateCurrentIndex(index) {
+    function updateCurrentIndex(index) 
+    {
         currentIndex.value = index;
     }
 </script>
-
-<style scoped>
-    /* You can keep other custom styles here if needed */
-</style>

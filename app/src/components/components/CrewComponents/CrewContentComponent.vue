@@ -1,7 +1,7 @@
 <template>
     <div 
         id="crew__content__container" 
-        class="flex flex-col absolute w-full items-center mt-[6em] " 
+        class="flex flex-col absolute w-full items-center mt-[6em]" 
         style="font-family: var(--ff-barlow-condensed);">
 
         <div> 

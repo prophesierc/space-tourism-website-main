@@ -1,13 +1,16 @@
 <template>
-  <v-app class="overflow-hidden">
-    <CrewContentComponent />
-    <NavBar />
-    <ImageHandler 
-      :mobileImage="BackgroundHomeMobile"
-      :tabletImage="BackgroundHomeTablet"
-      :desktopImage="BackgroundHomeDesktop"
-    />
-  </v-app>
+  <div class="w-screen h-screen overflow-hidden">
+    <!-- allows v-app stylings to prevent overflow due to imageHandler -->
+    <v-app>
+      <CrewContentComponent />
+      <NavBar />
+      <ImageHandler 
+        :mobileImage="BackgroundHomeMobile"
+        :tabletImage="BackgroundHomeTablet"
+        :desktopImage="BackgroundHomeDesktop"
+      />
+    </v-app>
+  </div>
 </template>
   
 <script setup>
