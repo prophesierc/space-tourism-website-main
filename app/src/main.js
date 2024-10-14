@@ -21,6 +21,9 @@ const routes = [
   { 
     path: '/crew', component: () => import('@/Routes/RoutingLayouts/CrewLayout.vue') 
   },
+  { 
+    path: '/technology', component: () => import('@/Routes/RoutingLayouts/TechnologyLayout.vue') 
+  },
 ];
 
 // Create the router

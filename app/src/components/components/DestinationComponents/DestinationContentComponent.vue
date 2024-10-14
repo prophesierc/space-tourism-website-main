@@ -2,11 +2,12 @@
   <div 
     id="destination__content__container" 
     class="flex flex-col absolute w-full items-center mt-[6em] h-[25em]" 
-    style="font-family: var(--ff-barlow-condensed);"
-  >
-  <Header :pageNumber="crewPage" :intro="crewintro" />
-  <DestinationSelector :index="value" />
-  <DestinationNavigationDrawer v-model="value" />
+    style="font-family: var(--ff-barlow-condensed);">
+
+    <Header :pageNumber="crewPage" :intro="crewintro" />
+    <DestinationSelector :index="value" />
+    <DestinationNavigationDrawer v-model="value" />
+    
   </div>
 </template>
 

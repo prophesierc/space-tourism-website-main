@@ -68,7 +68,7 @@
           </template>
         </v-list-item>
 
-        <v-list-item value="technology">
+        <v-list-item value="technology" to="/technology">
           <template v-slot:prepend>
             <p class="pr-3 font-bold text-base tracking-widest">03</p>
           </template>
