@@ -24,6 +24,8 @@ jobs:
 
       - name: Build
         working-directory: ./app
+        env:
+          VITE_API_KEY: ${{ secrets.VITE_API_KEY }} # Inject the secret here
         run: npm run build
 
       - name: Deploy to GitHub Pages
