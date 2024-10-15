@@ -1,9 +1,6 @@
 using App.API.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration; 
 using System.Text.Json;
-using System.Net.Http;
-using System.Net.Http.Headers;
 
 namespace App.API.Controllers
 {
@@ -12,15 +9,12 @@ namespace App.API.Controllers
     public class SpaceDataController : ControllerBase
     {
         private readonly IWebHostEnvironment _environment;
-        private readonly HttpClient _httpClient;
-        private readonly string _apiKey;
+        public required string _apiKey { get; init; }
 
-        public SpaceDataController(IWebHostEnvironment environment)
+        public SpaceDataController(IWebHostEnvironment environment, IConfiguration configuration)
         {
             _environment = environment;
-            _apiKey = Environment.GetEnvironmentVariable("ApiSettings__ApiKey") 
-                       ?? throw new InvalidOperationException("API Key not found in environment variables.");
-            _httpClient = new HttpClient();
+            _apiKey = configuration["ApiSettings:ApiKey"] ?? throw new InvalidOperationException("API Key not found in configuration.");
         }
 
         [HttpGet]
@@ -59,48 +53,6 @@ namespace App.API.Controllers
             }
 
             return NotFound("Data not found");
-        }
-
-        [HttpGet("proxy/data")]
-        public async Task<ActionResult<SpaceData>> GetProxyData([FromHeader(Name = "X-API-Key")] string apiKey)
-        {
-            if (string.IsNullOrEmpty(apiKey) || apiKey != _apiKey)
-            {
-                return Unauthorized("Invalid or missing API key.");
-            }
-
-            var apiUrl = "https://prophesierc.site/api/SpaceData/proxy/data"; 
-            _httpClient.DefaultRequestHeaders.Clear(); 
-            _httpClient.DefaultRequestHeaders.Add("X-API-Key", _apiKey); 
-
-            try
-            {
-                var response = await _httpClient.GetAsync(apiUrl);
-
-                if (!response.IsSuccessStatusCode)
-                {
-                    var errorMessage = await response.Content.ReadAsStringAsync(); 
-                    return StatusCode((int)response.StatusCode, $"Error fetching data from external API: {errorMessage}");
-                }
-
-                var json = await response.Content.ReadAsStringAsync();
-                var options = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                };
-                var spaceData = JsonSerializer.Deserialize<SpaceData>(json, options);
-
-                if (spaceData != null)
-                {
-                    return Ok(spaceData);
-                }
-
-                return BadRequest("Failed to deserialize the data from external API.");
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
         }
     }
 
