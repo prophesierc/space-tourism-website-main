@@ -12,13 +12,14 @@ namespace App.API.Controllers
     public class SpaceDataController : ControllerBase
     {
         private readonly IWebHostEnvironment _environment;
-        public required string _apiKey { get; init; }
         private readonly HttpClient _httpClient;
+        private readonly string _apiKey;
 
-        public SpaceDataController(IWebHostEnvironment environment, IConfiguration configuration)
+        public SpaceDataController(IWebHostEnvironment environment)
         {
             _environment = environment;
-            _apiKey = configuration["ApiSettings:ApiKey"] ?? throw new InvalidOperationException("API Key not found in configuration.");
+            _apiKey = Environment.GetEnvironmentVariable("ApiSettings__ApiKey") 
+                       ?? throw new InvalidOperationException("API Key not found in environment variables.");
             _httpClient = new HttpClient();
         }
 
@@ -61,10 +62,16 @@ namespace App.API.Controllers
         }
 
         [HttpGet("proxy/data")]
-        public async Task<ActionResult<SpaceData>> GetProxyData()
+        public async Task<ActionResult<SpaceData>> GetProxyData([FromHeader(Name = "X-API-Key")] string apiKey)
         {
-            var apiUrl = "https://prophesierc.site/api/SpaceData/proxy/data";
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+            if (string.IsNullOrEmpty(apiKey) || apiKey != _apiKey)
+            {
+                return Unauthorized("Invalid or missing API key.");
+            }
+
+            var apiUrl = "https://prophesierc.site/api/SpaceData/proxy/data"; 
+            _httpClient.DefaultRequestHeaders.Clear(); 
+            _httpClient.DefaultRequestHeaders.Add("X-API-Key", _apiKey); 
 
             try
             {

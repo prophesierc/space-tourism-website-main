@@ -1,19 +1,16 @@
 import { onMounted, ref } from 'vue';
-export function FetchAPI()
+
+export function FetchAPI() 
 {
     const postData = ref([]);
+
     const getPost = async () => 
     {
         try 
         {
-            const APIKey = import.meta.env.VITE_API_KEY; 
-            const response = await fetch('https://prophesierc.site/api/SpaceData', 
+            const response = await fetch('https://prophesierc.site/api/SpaceData/proxy/data', 
             {
-                method: 'GET',
-                headers: 
-                {
-                    'X-API-Key': APIKey
-                }
+                method: 'GET'
             });
 
             if (!response.ok) 
@@ -34,5 +31,6 @@ export function FetchAPI()
         const data = await getPost();
         postData.value = data || []; 
     });
+
     return { postData };
 }

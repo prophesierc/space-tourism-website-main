@@ -28,7 +28,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "sslPort": 7255 // Added this line for SSL port
+      "sslPort": 7255
     },
     "IIS Express": {
       "commandName": "IISExpress",
