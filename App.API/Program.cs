@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-var apiKey = builder.Configuration["ApiSettings:ApiKey"];
+
+var apiKey = Environment.GetEnvironmentVariable("ApiSettings__ApiKey")
+              ?? throw new InvalidOperationException("API Key not found in environment variables.");
 
 builder.Services.AddCors(options =>
 {
@@ -15,7 +18,6 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 
-// Add logging services
 builder.Services.AddLogging(logging =>
 {
     logging.AddConsole();
@@ -38,4 +40,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
