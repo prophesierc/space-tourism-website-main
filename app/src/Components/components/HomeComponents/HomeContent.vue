@@ -25,6 +25,7 @@
 </template>
 
 <script setup>
-  import HomeExploreButton from '@/Components/components/HomeComponents/HomeExploreButton.vue';
   defineOptions({ name: 'HomeContent'});
+  import { defineAsyncComponent } from 'vue';
+  const HomeExploreButton = defineAsyncComponent(() => import('@/Components/components/HomeComponents/HomeExploreButton.vue'));
 </script>

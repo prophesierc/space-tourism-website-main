@@ -12,10 +12,13 @@
     
 <script setup>
     defineOptions({ name: 'TechnologyLayout' });
-    import NavBar from '@/Components/components/NavBarComponent/NavBar.vue';
-    import ImageHandler from '@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue';  
-    import TechnologyContentComponents from '@/Components/components/TechnologyComponents/TechnologyContentComponents.vue'
-  
+    import { defineAsyncComponent } from 'vue';
+
+    const CrewCarousel = defineAsyncComponent(() => import('@/Components/components/CrewComponents/CrewCarousel.vue'));  
+    const NavBar = defineAsyncComponent(() => import('@/Components/components/NavBarComponent/NavBar.vue'));
+    const ImageHandler = defineAsyncComponent(() => import('@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue'));  
+    const TechnologyContentComponents = defineAsyncComponent(() => import('@/Components/components/TechnologyComponents/TechnologyContentComponents.vue'));  
+
     // ImageHandler prop images
     import BackgroundTechnologyMobile from '@/assets/technology/background-technology-mobile.jpg';
     import BackgroundTechnologyTablet from '@/assets/technology/background-technology-tablet.jpg';

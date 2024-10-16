@@ -11,13 +11,20 @@
     </v-app>
   </div>
 </template>
-  
+
 <script setup>
+  import { defineAsyncComponent } from 'vue';
   defineOptions({ name: 'HomeLayout' });
 
-  import ImageHandler from '@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue';
-  import NavBar from '@/Components/components/NavBarComponent/NavBar.vue';
-  import HomeContent from '@/Components/components/HomeComponents/HomeContent.vue';
+  const ImageHandler = defineAsyncComponent(() =>
+    import('@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue')
+  );
+  const NavBar = defineAsyncComponent(() =>
+    import('@/Components/components/NavBarComponent/NavBar.vue')
+  );
+  const HomeContent = defineAsyncComponent(() =>
+    import('@/Components/components/HomeComponents/HomeContent.vue')
+  );
 
   // ImageHandler prop images
   import BackgroundHomeMobile from '@/assets/home/background-home-mobile.jpg';
