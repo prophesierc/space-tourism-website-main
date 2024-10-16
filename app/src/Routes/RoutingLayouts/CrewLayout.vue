@@ -15,9 +15,11 @@
   
 <script setup>
   defineOptions({ name: 'CrewLayout' });
-  import NavBar from '@/Components/components/NavBarComponent/NavBar.vue';
-  import ImageHandler from '@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue';  
-  import CrewContentComponent from '@/Components/components/CrewComponents/CrewContentComponent.vue'
+  import { defineAsyncComponent } from 'vue';
+
+  const NavBar = defineAsyncComponent(() => import('@/Components/components/NavBarComponent/NavBar.vue'));
+  const ImageHandler = defineAsyncComponent(() => import('@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue'));  
+  const CrewContentComponent = defineAsyncComponent(() => import('@/Components/components/CrewComponents/CrewContentComponent.vue'));  
 
   // ImageHandler prop images
   import BackgroundHomeMobile from '@/assets/crew/background-crew-mobile.jpg';

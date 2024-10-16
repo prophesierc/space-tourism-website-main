@@ -15,8 +15,10 @@
 
 <script setup>
     defineOptions({ name: 'CrewContentComponent' })
-    import CrewCarousel from '@/Components/components/CrewComponents/CrewCarousel.vue'
-    import Header from '@/Components/props/GeneralProps/Header/Header.vue'
+    import { defineAsyncComponent } from 'vue';
+
+    const Header = defineAsyncComponent(() => import('@/Components/props/GeneralProps/Header/Header.vue'));  
+    const CrewCarousel = defineAsyncComponent(() => import('@/Components/components/CrewComponents/CrewCarousel.vue'));  
 
     const crewPage = "02"; 
     const crewintro = "MEET YOUR CREW";

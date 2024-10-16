@@ -13,9 +13,11 @@
 
 <script setup>
   import { ref } from 'vue';
-  import DestinationSelector from '@/Components/props/DestinationProps/DestinationSelector.vue';
-  import DestinationNavigationDrawer from '@/Components/components/DestinationComponents/DestinationNavigationDrawer.vue';
-  import Header from '@/Components/props/GeneralProps/Header/Header.vue'
+  import { defineAsyncComponent } from 'vue';
+
+  const DestinationSelector = defineAsyncComponent(() => import('@/Components/props/DestinationProps/DestinationSelector.vue'));
+  const DestinationNavigationDrawer = defineAsyncComponent(() => import('@/Components/components/DestinationComponents/DestinationNavigationDrawer.vue'));
+  const Header = defineAsyncComponent(() => import('@/Components/props/GeneralProps/Header/Header.vue'));
 
   const crewPage = "01"; 
   const crewintro = "PICK YOUR DESTINATION"; 
