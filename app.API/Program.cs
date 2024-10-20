@@ -64,9 +64,6 @@ public class API
 
         // Use rate limiting
         app.UseRateLimiter();
-
-        //Use Dev
-        app.UseDeveloperExceptionPage();
         
         app.UseSwagger();
         app.UseSwaggerUI(c =>
