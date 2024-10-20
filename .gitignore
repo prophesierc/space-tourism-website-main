@@ -20,5 +20,7 @@
 /app/.env
 app.API/bin
 app.API/obj
+App.API/bin
+App.API/obj
 
 app.API/nohup.out
