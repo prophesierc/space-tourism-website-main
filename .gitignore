@@ -18,9 +18,7 @@
 .vs/
 .env
 /app/.env
-**/obj/
-**/bin/
-
-
 
 app.API/nohup.out
+/app.API/bin
+/app.API/obj
