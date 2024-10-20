@@ -1,24 +1,32 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\data\\data.json",
-      "PackagePath": "staticwebassets\\data\\data.json"
+      "Id": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\crew.json",
+      "PackagePath": "staticwebassets\\data\\crew.json"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.App.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\destinations.json",
+      "PackagePath": "staticwebassets\\data\\destinations.json"
+    },
+    {
+      "Id": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\technology.json",
+      "PackagePath": "staticwebassets\\data\\technology.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.app.API.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.App.API.props",
-      "PackagePath": "build\\App.API.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.app.API.props",
+      "PackagePath": "build\\app.API.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.App.API.props",
-      "PackagePath": "buildMultiTargeting\\App.API.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.app.API.props",
+      "PackagePath": "buildMultiTargeting\\app.API.props"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.App.API.props",
-      "PackagePath": "buildTransitive\\App.API.props"
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.app.API.props",
+      "PackagePath": "buildTransitive\\app.API.props"
     }
   ],
   "ElementsToRemove": []
