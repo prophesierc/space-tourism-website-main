@@ -18,12 +18,7 @@
 .vs/
 .env
 /app/.env
+app.API/bin
+app.API/obj
 
-App.API/obj/Debug/net8.0/App.API.AssemblyInfo.cs
-App.API/obj/Debug/net8.0/App.API.AssemblyInfoInputs.cache
-App.API/obj/Release/net8.0/App.API.AssemblyInfo.cs
-App.API/obj/Release/net8.0/App.API.AssemblyInfoInputs.cache
-App.API/nohup.out
-App.API/obj/Debug/net8.0/App.API.AssemblyInfoInputs.cache
-App.API/obj/Release/net8.0/App.API.AssemblyInfo.cs
-App.API/obj/Release/net8.0/App.API.AssemblyInfoInputs.cache
+app.API/nohup.out
