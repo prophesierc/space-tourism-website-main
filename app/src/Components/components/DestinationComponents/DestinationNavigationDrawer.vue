@@ -47,32 +47,37 @@
 </template>
 
 <script setup>
-  import { ref, watch } from 'vue';
-  const props = defineProps(
-  {
-    modelValue: Number,
-  });
+import { ref, watch } from 'vue';
 
-  const emit = defineEmits(['update:modelValue']);
-  const selectedButton = ref(props.modelValue);
+const props = defineProps({
+  modelValue: Number,
+});
 
-  const selectButton = (index) => 
-  {
-    selectedButton.value = index; 
-  }
+const emit = defineEmits(['update:modelValue']); 
+const selectedButton = ref(props.modelValue); 
 
-  watch(selectedButton, (updatedValue) => 
-  {
-    emit('update:modelValue', updatedValue);
-  });
+const selectButton = (index) => 
+{
+  selectedButton.value = index; 
+};
+
+watch(selectedButton, (updatedValue) => 
+{
+  emit('update:modelValue', updatedValue);
+});
+
+watch(() => props.modelValue, (newVal) => 
+{
+  selectedButton.value = newVal; 
+});
 </script>
 
 <style scoped>
-  .btn-text {
-    padding-bottom: 12px;
-  }
+.btn-text {
+  padding-bottom: 12px;
+}
 
-  .disabled-button .btn-text {
-    border-bottom: 4px solid white;
-  }
+.disabled-button .btn-text {
+  border-bottom: 4px solid white;
+}
 </style>

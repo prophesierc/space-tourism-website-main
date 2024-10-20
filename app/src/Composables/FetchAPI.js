@@ -1,19 +1,16 @@
-import { onMounted, ref } from 'vue';
-export function FetchAPI()
+import { ref } from 'vue';
+
+export function FetchAPI() 
 {
-    const postData = ref([]);
-    const getPost = async () => 
+    const getData = ref([]);
+
+    const getRequest = async (endpoint) => 
     {
         try 
         {
-            const APIKey = import.meta.env.VITE_API_KEY; 
-            const response = await fetch('https://prophesierc.site/api/SpaceData', 
+            const response = await fetch(`https://prophesierc.site${endpoint}`, 
             {
                 method: 'GET',
-                headers: 
-                {
-                    'X-API-Key': APIKey
-                }
             });
 
             if (!response.ok) 
@@ -29,10 +26,5 @@ export function FetchAPI()
         }
     };
 
-    onMounted(async () => 
-    {
-        const data = await getPost();
-        postData.value = data || []; 
-    });
-    return { postData };
+    return { getData, getRequest }; 
 }

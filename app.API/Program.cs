@@ -35,7 +35,7 @@ public class API
         {
             options.AddPolicy("AllowSpecificOrigin",
                 builder => builder.WithOrigins(
-                    "http://localhost",
+                    "http://localhost:5173",
                     "https://prophesierc.github.io",
                     "https://prophesierc.site")
                                     .AllowAnyHeader()
