@@ -1,28 +1,28 @@
 {
   "Version": 1,
-  "Hash": "LLlG/Eda4iydf2FHK1tnJ6S7Gs30HBAkMNA0UeZo4dw=",
-  "Source": "App.API",
-  "BasePath": "_content/App.API",
+  "Hash": "DW9RLiJo5j0SotJ9wO9ZI/u0Wwh+qcIj9BFC8kZAC/w=",
+  "Source": "app.API",
+  "BasePath": "_content/app.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "App.API\\wwwroot",
-      "Source": "App.API",
-      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\",
-      "BasePath": "_content/App.API",
+      "Name": "app.API\\wwwroot",
+      "Source": "app.API",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "BasePath": "_content/app.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\data\\data.json",
-      "SourceId": "App.API",
+      "Identity": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\crew.json",
+      "SourceId": "app.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\App.API\\wwwroot\\",
-      "BasePath": "_content/App.API",
-      "RelativePath": "data/data.json",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "BasePath": "_content/app.API",
+      "RelativePath": "data/crew.json",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -33,7 +33,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\data\\data.json"
+      "OriginalItemSpec": "wwwroot\\data\\crew.json"
+    },
+    {
+      "Identity": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\destinations.json",
+      "SourceId": "app.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "BasePath": "_content/app.API",
+      "RelativePath": "data/destinations.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\destinations.json"
+    },
+    {
+      "Identity": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\technology.json",
+      "SourceId": "app.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "BasePath": "_content/app.API",
+      "RelativePath": "data/technology.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\technology.json"
     }
   ]
 }
