@@ -1,15 +1,15 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\crew.json",
+      "Id": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\data\\crew.json",
       "PackagePath": "staticwebassets\\data\\crew.json"
     },
     {
-      "Id": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\destinations.json",
+      "Id": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\data\\destinations.json",
       "PackagePath": "staticwebassets\\data\\destinations.json"
     },
     {
-      "Id": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\technology.json",
+      "Id": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\data\\technology.json",
       "PackagePath": "staticwebassets\\data\\technology.json"
     },
     {

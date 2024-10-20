@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DW9RLiJo5j0SotJ9wO9ZI/u0Wwh+qcIj9BFC8kZAC/w=",
+  "Hash": "+TreYqS7lYClmUlW0GgnuXKg1vmjwUVoq5AIPmHYj1s=",
   "Source": "app.API",
   "BasePath": "_content/app.API",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "app.API\\wwwroot",
       "Source": "app.API",
-      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\",
       "BasePath": "_content/app.API",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\crew.json",
+      "Identity": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\data\\crew.json",
       "SourceId": "app.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\",
       "BasePath": "_content/app.API",
       "RelativePath": "data/crew.json",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\data\\crew.json"
     },
     {
-      "Identity": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\destinations.json",
+      "Identity": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\data\\destinations.json",
       "SourceId": "app.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\",
       "BasePath": "_content/app.API",
       "RelativePath": "data/destinations.json",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\data\\destinations.json"
     },
     {
-      "Identity": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\data\\technology.json",
+      "Identity": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\data\\technology.json",
       "SourceId": "app.API",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\C#\\app\\app.API\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\bwkno\\source\\repos\\FrontendMentor.io\\space-tourism-website-main\\app.API\\wwwroot\\",
       "BasePath": "_content/app.API",
       "RelativePath": "data/technology.json",
       "AssetKind": "All",
