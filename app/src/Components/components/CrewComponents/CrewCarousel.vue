@@ -1,5 +1,5 @@
 <template>
-    <div v-if="postData['crew']" class="mt-10">
+    <div v-if="getData['crew'] && getData.crew.length" class="mt-10">
         <v-carousel
             :show-arrows="false"
             color="white"
@@ -12,7 +12,7 @@
             v-model="currentIndex">
 
             <v-carousel-item
-                v-for="(crew, index) in postData['crew']"
+                v-for="(crew, index) in getData.crew"
                 :key="index">
 
                 <div 
@@ -44,33 +44,33 @@
                     :alt="`${crew.name}'s image`"
                     class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[375px] max-h-[500px]" 
                 />
-                <!-- :srcset="`${crew.images.png} 480w, ${crew.images.webp} 800w`"
-                    sizes="(max-width: 600px) 500px, 800px" -->
-                <!-- max-h-[500px] controls the height of the images on growth -->
-
             </v-carousel-item>
         </v-carousel>
 
         <div class="absolute bottom-[56%] left-1/2 transform -translate-x-1/2 flex space-x-5">
             <span
-                v-for="(crew, index) in postData['crew']"
+                v-for="(crew, index) in getData.crew"
                 :key="index"
                 class="w-3 h-3 bg-white/50 rounded-full"
                 :class="{ 'bg-white': currentIndex === index }"
                 @click="currentIndex = index"
             ></span>
-            <!-- needs media query to change position at 600px -->
         </div>
     </div>
 </template>
-  
-<script setup>
-    defineOptions({ name: 'CrewCarousel' })
-    import { FetchAPI } from '@/Composables/FetchAPI';
-    import { ref } from 'vue';
 
-    const { postData } = FetchAPI();
+<script setup>
+    import { FetchAPI } from '@/Composables/FetchAPI';
+    import { ref, onMounted } from 'vue';
+
+    const { getData, getRequest } = FetchAPI();
     const currentIndex = ref(0);
+
+    onMounted(async () => 
+    {
+        getData.value = await getRequest('/crew');
+    });
+
     function updateCurrentIndex(index) 
     {
         currentIndex.value = index;

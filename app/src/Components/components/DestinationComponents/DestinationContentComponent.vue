@@ -4,22 +4,33 @@
     class="flex flex-col absolute w-full items-center mt-[6em] h-[25em]" 
     style="font-family: var(--ff-barlow-condensed);">
 
-    <Header :pageNumber="crewPage" :intro="crewintro" />
-    <DestinationSelector :index="value" />
+    <Header :pageNumber="destinationPage" :intro="destinationIntro" />
+    <DestinationSelector :getData="getData" :index="value" />
     <DestinationNavigationDrawer v-model="value" />
     
   </div>
 </template>
 
 <script setup>
-  import { ref } from 'vue';
-  import { defineAsyncComponent } from 'vue';
+import { ref, onMounted } from 'vue';
+import { defineAsyncComponent } from 'vue';
+import { FetchAPI } from '@/Composables/FetchAPI';
 
-  const DestinationSelector = defineAsyncComponent(() => import('@/Components/props/DestinationProps/DestinationSelector.vue'));
-  const DestinationNavigationDrawer = defineAsyncComponent(() => import('@/Components/components/DestinationComponents/DestinationNavigationDrawer.vue'));
-  const Header = defineAsyncComponent(() => import('@/Components/props/GeneralProps/Header/Header.vue'));
+// Define components
+const DestinationSelector = defineAsyncComponent(() => import('@/Components/props/DestinationProps/DestinationSelector.vue'));
+const DestinationNavigationDrawer = defineAsyncComponent(() => import('@/Components/components/DestinationComponents/DestinationNavigationDrawer.vue'));
+const Header = defineAsyncComponent(() => import('@/Components/props/GeneralProps/Header/Header.vue'));
 
-  const crewPage = "01"; 
-  const crewintro = "PICK YOUR DESTINATION"; 
-  const value = ref(0); // Default to Moon
+// Component data
+const destinationPage = "01"; 
+const destinationIntro = "PICK YOUR DESTINATION"; 
+const value = ref(0); // Default to Moon
+
+const { getData, getRequest } = FetchAPI(); 
+
+onMounted(async () => 
+{
+  const data = await getRequest('/destinations');
+  getData.value = data; 
+});
 </script>

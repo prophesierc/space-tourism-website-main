@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
+using System.Text;
 using System.Threading.RateLimiting;
 
 public class API
@@ -35,7 +36,7 @@ public class API
         {
             options.AddPolicy("AllowSpecificOrigin",
                 builder => builder.WithOrigins(
-                    "http://localhost",
+                    "http://localhost:5173",
                     "https://prophesierc.github.io",
                     "https://prophesierc.site")
                                     .AllowAnyHeader()
@@ -64,7 +65,7 @@ public class API
 
         // Use rate limiting
         app.UseRateLimiter();
-        
+
         app.UseSwagger();
         app.UseSwaggerUI(c =>
         {
@@ -85,6 +86,7 @@ public class API
             var jsonData = await File.ReadAllTextAsync("wwwroot/data/destinations.json");
             return Results.Json(JsonSerializer.Deserialize<Dictionary<string, object>>(jsonData));
         }).RequireRateLimiting("fixed");
+
 
         app.MapGet("/technology", async (ILogger<API> logger) =>
         {
