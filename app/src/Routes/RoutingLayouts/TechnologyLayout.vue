@@ -14,9 +14,14 @@
     defineOptions({ name: 'TechnologyLayout' });
     import { defineAsyncComponent } from 'vue';
 
-    const NavBar = defineAsyncComponent(() => import('@/Components/components/NavBarComponent/NavBar.vue'));
-    const ImageHandler = defineAsyncComponent(() => import('@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue'));  
-    const TechnologyContentComponents = defineAsyncComponent(() => import('@/Components/components/TechnologyComponents/TechnologyContentComponents.vue'));  
+    const NavBar = defineAsyncComponent(() => 
+     import('@/Components/General/NavBar.vue'));
+
+    const ImageHandler = defineAsyncComponent(() => 
+     import('@/Components/General/ImageHandler.vue'));  
+     
+    const TechnologyContentComponents = defineAsyncComponent(() => 
+        import('@/Components/TechnologyComponents/TechnologyContentComponents.vue'));  
 
     // ImageHandler prop images
     import BackgroundTechnologyMobile from '@/assets/technology/background-technology-mobile.jpg';

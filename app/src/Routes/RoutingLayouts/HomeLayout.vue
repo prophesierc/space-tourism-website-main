@@ -16,14 +16,14 @@
   import { defineAsyncComponent } from 'vue';
   defineOptions({ name: 'HomeLayout' });
 
-  const ImageHandler = defineAsyncComponent(() =>
-    import('@/Components/props/GeneralProps/ImageHandlerProp/ImageHandler.vue')
-  );
-  const NavBar = defineAsyncComponent(() =>
-    import('@/Components/components/NavBarComponent/NavBar.vue')
-  );
+  const NavBar = defineAsyncComponent(() => 
+   import('@/Components/General/NavBar.vue'));
+
+  const ImageHandler = defineAsyncComponent(() => 
+    import('@/Components/General/ImageHandler.vue')); 
+
   const HomeContent = defineAsyncComponent(() =>
-    import('@/Components/components/HomeComponents/HomeContent.vue')
+    import('@/Components/HomeComponents/HomeContent.vue')
   );
 
   // ImageHandler prop images

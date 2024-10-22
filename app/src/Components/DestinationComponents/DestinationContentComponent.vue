@@ -17,9 +17,14 @@ import { defineAsyncComponent } from 'vue';
 import { FetchAPI } from '@/Composables/FetchAPI';
 
 // Define components
-const DestinationSelector = defineAsyncComponent(() => import('@/Components/props/DestinationProps/DestinationSelector.vue'));
-const DestinationNavigationDrawer = defineAsyncComponent(() => import('@/Components/components/DestinationComponents/DestinationNavigationDrawer.vue'));
-const Header = defineAsyncComponent(() => import('@/Components/props/GeneralProps/Header/Header.vue'));
+const DestinationSelector = defineAsyncComponent(() => 
+  import('@/Components/DestinationComponents/DestinationProps/DestinationSelector.vue'));
+
+const DestinationNavigationDrawer = defineAsyncComponent(() => 
+  import('@/Components/DestinationComponents/DestinationNavigationDrawer.vue'));
+
+const Header = defineAsyncComponent(() => 
+  import('@/Components/General/Header.vue'));
 
 // Component data
 const destinationPage = "01"; 

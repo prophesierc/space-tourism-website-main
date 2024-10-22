@@ -41,6 +41,8 @@
 
                 <img
                     :src="crew.images.png" 
+                    :srcset="`${crew.images.png} 480w, ${crew.images.webp} 800w`"
+                    sizes="(max-width: 600px) 500px, 800px" 
                     :alt="`${crew.name}'s image`"
                     class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[375px] max-h-[500px]" 
                 />

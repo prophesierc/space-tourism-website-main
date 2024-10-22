@@ -17,8 +17,11 @@
     defineOptions({ name: 'CrewContentComponent' })
     import { defineAsyncComponent } from 'vue';
 
-    const Header = defineAsyncComponent(() => import('@/Components/props/GeneralProps/Header/Header.vue'));  
-    const CrewCarousel = defineAsyncComponent(() => import('@/Components/components/CrewComponents/CrewCarousel.vue'));  
+    const Header = defineAsyncComponent(() => 
+        import('@/Components/General/Header.vue'));    
+
+    const CrewCarousel = defineAsyncComponent(() => 
+        import('@/Components/CrewComponents/CrewCarousel.vue'));  
 
     const crewPage = "02"; 
     const crewintro = "MEET YOUR CREW";
