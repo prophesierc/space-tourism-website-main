@@ -12,7 +12,8 @@
 defineOptions({ name: 'TechnologyContentComponents' })
 import { defineAsyncComponent } from 'vue';
 
-const Header = defineAsyncComponent(() => import('@/Components/props/GeneralProps/Header/Header.vue'));
+const Header = defineAsyncComponent(() => 
+  import('@/Components/General/Header.vue'));
 
 const crewPage = "04"; 
 const crewintro = "SPACE LAUNCH 101";
