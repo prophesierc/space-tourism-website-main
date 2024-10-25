@@ -62,6 +62,7 @@
 </template>
 
 <script setup>
+    defineOptions({ name: 'CrewCarousel' })
     import { FetchAPI } from '@/Composables/FetchAPI';
     import { ref, onMounted } from 'vue';
 
