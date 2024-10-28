@@ -1,17 +1,24 @@
 <template>
-    <div class="flex flex-col justify-center align-center h-screen w-auto">
+    <div class="h-[300px] w-auto">
         <v-carousel
             :show-arrows="false"
             color="white"
             hide-delimiter-background
-            hide-delimiters
-            class="flex justify-center align-center">
+            @change="updateCurrentIndex"
+            v-model="currentIndex">
 
-            <v-carousel-item>
+            <v-carousel-item 
+                v-for="(tech, index) in getData.technology"
+                :key="index">
+
                 <img
-                    src="@/assets/technology/image-launch-vehicle-portrait.jpg" 
+                    :src="tech.images.portrait" 
+                    :srcset="`${tech.images.portrait} 480w, ${tech.images.landscape} 800w`"
+                    sizes="(max-width: 600px) 500px, 800px" 
+                    :alt="`${tech.name}'s image`"
                     class="object-none object-bottom w-auto h-auto"
                 />
+
             </v-carousel-item>
 
         </v-carousel>
