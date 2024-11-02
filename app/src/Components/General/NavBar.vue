@@ -6,8 +6,9 @@
     <v-row align="center" justify="space-between" class="w-full">
       <v-col cols="auto">
         <img 
-           v-lazy="Logo"
+          v-lazy="Logo"
           alt="Logo" 
+          :draggable="false"
           class="w-full h-full" 
         ></img>
       </v-col>
@@ -15,6 +16,7 @@
       <v-col cols="auto"> 
         <img 
           v-lazy="OpenDrawer"
+          :draggable="false"
           @click="drawer = !drawer" 
           alt="Open Menu" 
           class="w-full h-full" 

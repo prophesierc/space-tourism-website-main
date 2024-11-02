@@ -1,4 +1,11 @@
-<!-- if API or Vue3 error, default to this page -->
 <template>
-
+    <router-view v-slot="{ Component }">
+      <keep-alive>
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
 </template>
+
+<script setup>
+  defineOptions({ name: 'ErrorPage' });
+</script>

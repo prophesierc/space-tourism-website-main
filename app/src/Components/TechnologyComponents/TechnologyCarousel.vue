@@ -14,6 +14,7 @@
 
                 <img
                     :src="tech.images.portrait" 
+                    :draggable="false"
                     :srcset="`${tech.images.portrait} 480w, ${tech.images.landscape} 100w`"
                     sizes="(max-width: 700px) 500px, 800px" 
                     :alt="`${tech.name}'s image`"

@@ -8,6 +8,7 @@
         :key="getData.destinations[index]" 
         :width="200"
         :src="getData.destinations[index].images.png" 
+        :draggable="false"
         class="mb-10"
         alt="Destination Image">
 

@@ -41,6 +41,7 @@
 
                 <img
                     :src="crew.images.png" 
+                    :draggable="false"
                     :srcset="`${crew.images.png} 480w, ${crew.images.webp} 800w`"
                     sizes="(max-width: 600px) 500px, 800px" 
                     :alt="`${crew.name}'s image`"
