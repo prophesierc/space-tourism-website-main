@@ -1,5 +1,5 @@
 <template>
-    <div class="h-[300px] w-auto">
+    <div class="mt-10 h-[300px] w-auto bg-red">
         <v-carousel
             :show-arrows="false"
             color="white"
@@ -9,14 +9,15 @@
 
             <v-carousel-item 
                 v-for="(tech, index) in getData.technology"
-                :key="index">
+                :key="index"
+                class="bg-yellow h-auto">
 
                 <img
                     :src="tech.images.portrait" 
-                    :srcset="`${tech.images.portrait} 480w, ${tech.images.landscape} 800w`"
-                    sizes="(max-width: 600px) 500px, 800px" 
+                    :srcset="`${tech.images.portrait} 480w, ${tech.images.landscape} 100w`"
+                    sizes="(max-width: 700px) 500px, 800px" 
                     :alt="`${tech.name}'s image`"
-                    class="object-none object-bottom w-auto h-auto"
+                    class="object-none object-bottom w-auto h-auto bg-green"
                 />
 
             </v-carousel-item>
