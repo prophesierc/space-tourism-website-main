@@ -1,5 +1,6 @@
 <template>
-    <div v-if="getData?.technology" class="mt-10">
+    <div v-if="getData?.technology" 
+        class="flex flex-col align-center mt-10">
         <v-carousel
             :show-arrows="false"
             color="white"
@@ -20,22 +21,22 @@
                     sizes="(max-width: 373px) 500px, 600px" 
                     :alt="`${tech.name}'s image`"
                     class="object-none object-bottom"
-                />
-                
-            </v-carousel-item>            
+                />  
 
+            </v-carousel-item>           
         </v-carousel>
 
-        <div class="absolute bottom-[56%] left-1/2 transform -translate-x-1/2 flex space-x-5">
+        <div class="flex flex-row w-full justify-center align-end h-10 pb-5 space-x-5 ">
             <span
                 v-for="(tech, index) in getData?.technology"
                 :key="index"
-                class="w-3 h-3 bg-white/50 rounded-full"
-                :class="{ 'bg-white': currentIndex === index }"
+                class="w-10 h-10 rounded-full text-center 
+                    flex flex-col justify-center text-white "
+                :class="{ 'bg-white text-red ': currentIndex === index }"
                 @click="currentIndex = index"
-            ></span>
-        </div>
-        
+            >{{index}}</span>
+                    
+        </div>  
     </div>
     
 </template>
