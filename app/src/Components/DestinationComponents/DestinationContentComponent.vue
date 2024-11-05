@@ -12,30 +12,30 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { defineAsyncComponent } from 'vue';
-import { FetchAPI } from '@/Composables/FetchAPI';
+  import { ref, onMounted } from 'vue';
+  import { defineAsyncComponent } from 'vue';
+  import { FetchAPI } from '@/Composables/FetchAPI';
 
-// Define components
-const DestinationSelector = defineAsyncComponent(() => 
-  import('@/Components/DestinationComponents/DestinationProps/DestinationSelector.vue'));
+  // Define components
+  const DestinationSelector = defineAsyncComponent(() => 
+    import('@/Components/DestinationComponents/DestinationProps/DestinationSelector.vue'));
 
-const DestinationNavigationDrawer = defineAsyncComponent(() => 
-  import('@/Components/DestinationComponents/DestinationNavigationDrawer.vue'));
+  const DestinationNavigationDrawer = defineAsyncComponent(() => 
+    import('@/Components/DestinationComponents/DestinationNavigationDrawer.vue'));
 
-const Header = defineAsyncComponent(() => 
-  import('@/Components/General/Header.vue'));
+  const Header = defineAsyncComponent(() => 
+    import('@/Components/General/Header.vue'));
 
-// Component data
-const destinationPage = "01"; 
-const destinationIntro = "PICK YOUR DESTINATION"; 
-const value = ref(0); // Default to Moon
+  // Component data
+  const destinationPage = "01"; 
+  const destinationIntro = "PICK YOUR DESTINATION"; 
+  const value = ref(0); // Default to Moon
 
-const { getData, getRequest } = FetchAPI(); 
+  const { getData, getRequest } = FetchAPI(); 
 
-onMounted(async () => 
-{
-  const data = await getRequest('/destinations');
-  getData.value = data; 
-});
+  onMounted(async () => 
+  {
+    const data = await getRequest('/destinations');
+    getData.value = data; 
+  });
 </script>

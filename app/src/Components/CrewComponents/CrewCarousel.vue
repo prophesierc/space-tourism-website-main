@@ -1,5 +1,5 @@
 <template>
-    <div v-if="getData['crew'] && getData.crew.length" class="mt-10">
+    <div v-if="getData?.crew" class="mt-10">
         <v-carousel
             :show-arrows="false"
             color="white"
@@ -12,7 +12,7 @@
             v-model="currentIndex">
 
             <v-carousel-item
-                v-for="(crew, index) in getData.crew"
+                v-for="(crew, index) in getData?.crew"
                 :key="index">
 
                 <div 
@@ -52,7 +52,7 @@
 
         <div class="absolute bottom-[56%] left-1/2 transform -translate-x-1/2 flex space-x-5">
             <span
-                v-for="(crew, index) in getData.crew"
+                v-for="(crew, index) in getData?.crew"
                 :key="index"
                 class="w-3 h-3 bg-white/50 rounded-full"
                 :class="{ 'bg-white': currentIndex === index }"
