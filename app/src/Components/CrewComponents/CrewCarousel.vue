@@ -23,30 +23,31 @@
                     <h2 
                         class="text-[#8d8f93]"
                         style="font-family: var(--ff-bellefair)">
-                        {{ crew.role.toUpperCase() }}
+                        {{ crew?.role.toUpperCase() }}
                     </h2>
 
                     <h3 
                         class="text-white text-[22px] mb-5"
                         style="font-family: var(--ff-bellefair)">
-                        {{ crew.name.toUpperCase() }}
+                        {{ crew?.name.toUpperCase() }}
                     </h3>
 
                     <p
                         class="text-[16px] tracking-wide font-[300] text-[#d0d6f9] px-7"
                         style="font-family: var(--ff-barlow-condensed)">
-                        {{ crew.bio }}
+                        {{ crew?.bio }}
                     </p>
                 </div>
 
                 <img
-                    :src="crew.images.png" 
+                    :src="crew?.images?.png" 
                     :draggable="false"
-                    :srcset="`${crew.images.png} 480w, ${crew.images.webp} 800w`"
+                    :srcset="`${crew?.images?.png} 480w, ${crew?.images?.webp} 800w`"
                     sizes="(max-width: 600px) 500px, 800px" 
-                    :alt="`${crew.name}'s image`"
+                    :alt="`${crew?.name}'s image`"
                     class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-auto h-[375px] max-h-[500px]" 
                 />
+
             </v-carousel-item>
         </v-carousel>
 
@@ -54,11 +55,22 @@
             <span
                 v-for="(crew, index) in getData?.crew"
                 :key="index"
-                class="w-3 h-3 bg-white/50 rounded-full"
-                :class="{ 'bg-white': currentIndex === index }"
+                class="w-3 h-3 rounded-full"
+                :class="[
+                        currentIndex === index 
+                            ? 'bg-white' 
+                            : 'bg-white/50'
+                        ]"
                 @click="currentIndex = index"
             ></span>
         </div>
+    </div>
+    <div v-else 
+        class='flex items-center justify-center h-64'>
+        <v-progress-circular 
+            indeterminate 
+            color='amber'
+        ></v-progress-circular>
     </div>
 </template>
 

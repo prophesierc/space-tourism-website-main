@@ -1,13 +1,13 @@
 <template>
   <div 
-    class="absolute flex flex-col items-center pb-10 min-h-96 h-full" 
-    v-if="getData.destinations">
+    class="absolute flex flex-col items-center pb-10 h-full" 
+    v-if="getData?.destinations">
 
     <keep-alive>
       <v-img
-        :key="getData.destinations[index]" 
+        :key="getData?.destinations[index]" 
         :width="200"
-        :src="getData.destinations[index].images.png" 
+        :src="getData?.destinations[index]?.images?.png" 
         :draggable="false"
         class="mb-10"
         alt="Destination Image">
@@ -28,11 +28,11 @@
       <h2
         class="text-[60px] tracking-tight"
         style="font-family: var(--ff-bellefair)"
-          >{{ getData.destinations[index].name.toUpperCase() }}
+          >{{ getData?.destinations[index]?.name.toUpperCase() }}
       </h2>
       <p 
         class="text-[16px] text-center mx-11 tracking-normal font-[300] text-[#d0d6f9]"
-          >{{ getData.destinations[index].description }}
+          >{{ getData?.destinations[index]?.description }}
         <span>
           <hr class="h-px my-5 border-0 dark:bg-gray-700">
         </span>
@@ -45,7 +45,7 @@
         </span>
         <p 
           class="text-white text-[28px] tracking-wide pb-5"
-            >{{ getData.destinations[index].distance.toUpperCase() }}
+            >{{ getData?.destinations[index]?.distance.toUpperCase() }}
         </p>
       </h3>
 
@@ -56,7 +56,7 @@
         </span>
         <p 
           class="text-white text-[28px] tracking-wide"
-            >{{ getData.destinations[index].travel.toUpperCase() }}
+            >{{ getData?.destinations[index]?.travel.toUpperCase() }}
         </p>
       </h4>
     </div>

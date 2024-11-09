@@ -19,6 +19,6 @@
   const TechnologyCarousel = defineAsyncComponent(() => 
     import('@/Components/TechnologyComponents/TechnologyCarousel.vue'));
 
-  const crewPage = "04"; 
+  const crewPage = "03"; 
   const crewintro = "SPACE LAUNCH 101";
 </script>

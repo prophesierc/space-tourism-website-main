@@ -1,7 +1,7 @@
 <template>
   <div 
     id="background__container" 
-    class="w-screen min-w-[260px] min-h-[875px] flex">
+    class="w-screen min-w-full min-h-[900px] flex">
     
     <picture class="flex w-full min-h-screen">
       <!-- Mobile Image -->
