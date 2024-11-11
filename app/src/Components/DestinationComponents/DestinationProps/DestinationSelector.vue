@@ -10,13 +10,15 @@
         :src="getData?.destinations[index]?.images?.png" 
         :draggable="false"
         class="mb-10"
-        alt="Destination Image">
+        alt="Destination Image"
+        aria-label="Destination image">
 
         <template v-slot:placeholder>
           <div class="flex align-center justify-center items-center fill-height">
             <v-progress-circular
               color="amber"
               indeterminate
+              aria-label="Loading destination image"
             ></v-progress-circular>
           </div>
         </template>
@@ -28,11 +30,13 @@
       <h2
         class="text-[60px] tracking-tight"
         style="font-family: var(--ff-bellefair)"
-          >{{ getData?.destinations[index]?.name.toUpperCase() }}
+        aria-labelledby="destination-name"
+        >{{ getData?.destinations[index]?.name.toUpperCase() }}
       </h2>
       <p 
         class="text-[16px] text-center mx-11 tracking-normal font-[300] text-[#d0d6f9]"
-          >{{ getData?.destinations[index]?.description }}
+        aria-describedby="destination-description"
+        >{{ getData?.destinations[index]?.description }}
         <span>
           <hr class="h-px my-5 border-0 dark:bg-gray-700">
         </span>
@@ -41,22 +45,24 @@
       <h3 class="text-center" style="font-family: var(--ff-bellefair)">
         <span 
           class="text-[#d0d6f9] text-[12px] tracking-wide font-thin"
-            >AVG. DISTANCE
+          >AVG. DISTANCE
         </span>
         <p 
           class="text-white text-[28px] tracking-wide pb-5"
-            >{{ getData?.destinations[index]?.distance.toUpperCase() }}
+          aria-describedby="destination-distance"
+          >{{ getData?.destinations[index]?.distance.toUpperCase() }}
         </p>
       </h3>
 
       <h4 class="text-center" style="font-family: var(--ff-bellefair)">
         <span 
           class="text-[#d0d6f9] text-[12px] tracking-wide font-thin"
-            >EST. TRAVEL TIME
+          >EST. TRAVEL TIME
         </span>
         <p 
           class="text-white text-[28px] tracking-wide"
-            >{{ getData?.destinations[index]?.travel.toUpperCase() }}
+          aria-describedby="destination-travel-time"
+          >{{ getData?.destinations[index]?.travel.toUpperCase() }}
         </p>
       </h4>
     </div>

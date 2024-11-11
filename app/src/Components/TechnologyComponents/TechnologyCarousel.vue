@@ -1,60 +1,63 @@
 <template>
     <div 
-        v-if='getData?.technology' 
-        class='absolute w-full pt-20 h-full'>
-        
+        v-if="getData?.technology" 
+        class="absolute w-full pt-20 h-full">
+    
         <div 
-            class='relative w-full'>
+            class="relative w-full">
             <v-carousel
-                :show-arrows='false'
-                color='white'
+                :show-arrows="false"
+                color="white"
+                :cycle="true"
+                interval="3500"
                 hide-delimiter-background
                 hide-delimiters
-                height='300'
-                @change='updateCurrentIndex'
-                v-model='currentIndex'>
+                height="300"
+                @change="updateCurrentIndex"
+                v-model="currentIndex">
 
                 <v-carousel-item 
-                    v-for='(tech, index) in getData?.technology'
-                    :key='index'>
+                    v-for="(tech, index) in getData?.technology"
+                    :key="index">
                     <div 
-                        class='flex flex-col justify-center align-center relative w-full h-full'>
-                        <img v-if="currentIndex !== 2"
-                            :src='tech?.images?.portrait'
-                            :draggable='false'
-                            :srcset='`${tech?.images?.portrait} 480w, ${tech?.images?.landscape} 300w`'
-                            sizes='(max-width: 375px) 500px, 600px'
+                        class="flex flex-col justify-center align-center relative w-full h-full">
+
+                        <img 
+                            v-show="currentIndex !== 2" 
+                            :src="tech?.images?.portrait"
+                            :draggable="false"
+                            :srcset="`${tech?.images?.portrait} 480w, ${tech?.images?.landscape} 300w`"
+                            sizes="(max-width: 375px) 500px, 600px"
                             :alt="`${tech?.name}'s image`"
-                            class='min-w-full w-auto min-h-[375px] h-auto object-bottom'
+                            class="min-w-full w-auto min-h-[375px] h-auto object-bottom"
                         />
-                        <img v-else
-                            :src='tech?.images?.portrait'
-                            :draggable='false'
-                            :srcset='`${tech?.images?.portrait} 275w, ${tech?.images?.landscape} 300w`'
-                            sizes='(max-width: 275px) 500px, 600px'
+                        <img 
+                            v-show="currentIndex === 2" 
+                            :src="tech?.images?.portrait"
+                            :draggable="false"
+                            :srcset="`${tech?.images?.portrait} 275w, ${tech?.images?.landscape} 300w`"
+                            sizes="(max-width: 275px) 500px, 600px"
                             :alt="`${tech?.name}'s image`"
-                            class='min-h-[275px]'
-                            />
+                            class="min-h-[275px]"
+                        />
                     </div>
                 </v-carousel-item>           
             </v-carousel>
 
-            <div 
-                class='flex justify-center items-center pt-5'>
-                <div 
-                    class='flex space-x-5'>
+            <div class="flex justify-center items-center pt-5">
+                <div class="flex space-x-5">
                     <button
-                        v-for='(tech, index) in getData?.technology'
-                        :key='index'
+                        v-for="(tech, index) in getData?.technology"
+                        :key="index"
                         style="font-family: var(--ff-bellefair)"
-                        class='w-10 h-10 rounded-full flex items-center justify-center mt-5'
+                        class="w-10 h-10 rounded-full flex items-center justify-center mt-5"
                         :class="[
                             currentIndex === index 
-                                ? 'bg-white text-black' 
-                                : 'bg-transparent text-white border-[1px] border-solid border-white'
+                            ? 'bg-white text-black' 
+                            : 'bg-transparent text-white border-[1px] border-solid border-white'
                         ]"
-                        @click='currentIndex = index'>
-                        {{ index + 1 }}
+                        @click="currentIndex = index"
+                            >{{ index + 1 }}
                     </button>
                 </div>
             </div>
@@ -64,27 +67,29 @@
                 style="font-family: var(--ff-bellefair)">
 
                 <h2> THE TERMINOLOGY...</h2>
-    
+
                 <h3 
                     class="text-white text-[28px] pt-2 font-thin"
-                    > {{ getData?.technology[currentIndex]?.name.toUpperCase() }}
+                        >{{ getData?.technology[currentIndex]?.name.toUpperCase() }}
                 </h3>
-    
+
                 <p
                     class="text-white pt-4 text-[18px] font-thin w-[91%] max-w-[25em] tracking-wide"
                     style="font-family: var(--ff-barlow-condensed)"
-                    > {{ getData?.technology[currentIndex]?.description }}
+                        >{{ getData?.technology[currentIndex]?.description }}
                 </p>
             </div>
+
         </div>
     </div>
-    
-    <div v-else 
-        class='flex items-center justify-center h-64'>
+
+    <div 
+        v-else 
+        class="flex items-center justify-center h-64">
         <v-progress-circular 
             indeterminate 
-            color='amber'
-        ></v-progress-circular>
+            color="amber" 
+        />
     </div>
 </template>
 
@@ -101,8 +106,8 @@
         getData.value = await getRequest('/technology');
     });
 
-    const updateCurrentIndex = (index) =>
+    const updateCurrentIndex = (index) => 
     {
-        currentIndex.value = index;
-    }
+       currentIndex.value = index;
+    };
 </script>

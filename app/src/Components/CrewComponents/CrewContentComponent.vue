@@ -6,8 +6,12 @@
 
         <div> 
 
-            <Header :pageNumber="crewPage" :intro="crewintro" />
-            <CrewCarousel />
+            <Header 
+                :pageNumber="crewPage" 
+                :intro="crewIntro" 
+                aria-labelledby="crew-header" 
+            />
+            <CrewCarousel aria-label="Crew carousel showing team members" />
             
         </div>
     </div>  
@@ -24,5 +28,5 @@
         import('@/Components/CrewComponents/CrewCarousel.vue'));  
 
     const crewPage = "02"; 
-    const crewintro = "MEET YOUR CREW";
+    const crewIntro = "MEET YOUR CREW";
 </script>

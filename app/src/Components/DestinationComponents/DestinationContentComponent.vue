@@ -2,11 +2,24 @@
   <div 
     id="destination__content__container" 
     class="flex flex-col absolute w-full items-center mt-[6em] h-[25em]" 
-    style="font-family: var(--ff-barlow-condensed);">
+    style="font-family: var(--ff-barlow-condensed);"
+    aria-labelledby="destination-header"
+  >
 
-    <Header :pageNumber="destinationPage" :intro="destinationIntro" />
-    <DestinationSelector :getData="getData" :index="value" />
-    <DestinationNavigationDrawer v-model="value" />
+    <Header 
+      :pageNumber="destinationPage" 
+      :intro="destinationIntro" 
+      id="destination-header"
+    />
+    <DestinationSelector 
+      :getData="getData" 
+      :index="value" 
+      aria-label="Destination selector"
+    />
+    <DestinationNavigationDrawer 
+      v-model="value" 
+      aria-label="Destination navigation drawer"
+    />
     
   </div>
 </template>
@@ -16,7 +29,6 @@
   import { defineAsyncComponent } from 'vue';
   import { FetchAPI } from '@/Composables/FetchAPI';
 
-  // Define components
   const DestinationSelector = defineAsyncComponent(() => 
     import('@/Components/DestinationComponents/DestinationProps/DestinationSelector.vue'));
 
@@ -26,11 +38,9 @@
   const Header = defineAsyncComponent(() => 
     import('@/Components/General/Header.vue'));
 
-  // Component data
   const destinationPage = "01"; 
   const destinationIntro = "PICK YOUR DESTINATION"; 
-  const value = ref(0); // Default to Moon
-
+  const value = ref(0); 
   const { getData, getRequest } = FetchAPI(); 
 
   onMounted(async () => 

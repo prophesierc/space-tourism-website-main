@@ -7,10 +7,11 @@
       <v-col cols="auto">
         <img 
           v-lazy="Logo"
-          alt="Logo" 
+          alt="Website Logo" 
           :draggable="false"
           class="w-full h-full" 
-        ></img>
+          aria-label="Company logo"
+        />
       </v-col>
       
       <v-col cols="auto"> 
@@ -20,7 +21,7 @@
           @click="drawer = !drawer" 
           alt="Open Menu" 
           class="w-full h-full" 
-          aria-label="Open Menu"
+          aria-label="Open the main menu"
         />
       </v-col>
     </v-row>
@@ -31,6 +32,7 @@
       app 
       :location="$vuetify.display.mobile ? 'right' : undefined"
       class="bg-transparent backdrop-blur-sm"
+      aria-label="Main navigation drawer"
     >
       <v-list-item>
         <img 
@@ -38,12 +40,12 @@
           class="absolute right-2 m-3 w-5 h-5" 
           alt="Close Menu" 
           @click="drawer = !drawer"
-          aria-label="Close Menu"
+          aria-label="Close the main menu"
         />
       </v-list-item>
 
       <v-list density="default" width="100%" ripple rounded nav class="mt-20 text-white flex flex-column pl-8">
-        <v-list-item value="home" to="/">
+        <v-list-item value="home" to="/" aria-label="Navigate to Home page">
           <template v-slot:prepend>
             <p class="pr-3 font-bold text-base tracking-widest">00</p>
           </template>
@@ -52,7 +54,7 @@
           </template>
         </v-list-item>
 
-        <v-list-item value="destination" to="/destination">
+        <v-list-item value="destination" to="/destination" aria-label="Navigate to Destination page">
           <template v-slot:prepend>
             <p class="pr-3 font-bold text-base tracking-widest">01</p>
           </template>
@@ -61,7 +63,7 @@
           </template>
         </v-list-item>
 
-        <v-list-item value="crew" to="/crew">
+        <v-list-item value="crew" to="/crew" aria-label="Navigate to Crew page">
           <template v-slot:prepend>
             <p class="pr-3 font-bold text-base tracking-widest">02</p>
           </template>
@@ -70,7 +72,7 @@
           </template>
         </v-list-item>
 
-        <v-list-item value="technology" to="/technology">
+        <v-list-item value="technology" to="/technology" aria-label="Navigate to Technology page">
           <template v-slot:prepend>
             <p class="pr-3 font-bold text-base tracking-widest">03</p>
           </template>

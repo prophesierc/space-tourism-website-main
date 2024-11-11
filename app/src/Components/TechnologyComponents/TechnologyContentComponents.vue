@@ -4,7 +4,7 @@
     class="flex flex-col absolute w-full items-center mt-[6em] h-[25em]" 
     style="font-family: var(--ff-barlow-condensed);">
 
-    <Header :pageNumber="crewPage" :intro="crewintro" />
+    <Header :pageNumber="techPage" :intro="techIntro" />
     <TechnologyCarousel />
   </div>
 </template>
@@ -19,6 +19,6 @@
   const TechnologyCarousel = defineAsyncComponent(() => 
     import('@/Components/TechnologyComponents/TechnologyCarousel.vue'));
 
-  const crewPage = "03"; 
-  const crewintro = "SPACE LAUNCH 101";
+  const techPage = "03"; 
+  const techIntro = "SPACE LAUNCH 101";
 </script>

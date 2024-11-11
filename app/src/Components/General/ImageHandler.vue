@@ -25,7 +25,7 @@
       <!-- Fallback Image -->
       <img
         :src="mobileImage"
-        alt="Background Image"
+        :alt="altText"
         class="object-cover w-full h-full"
       />
     </picture>
@@ -36,9 +36,15 @@
 <script setup>
   defineOptions({ name: 'ImageHandler' });
   
-  const props = defineProps({
+  const props = defineProps(
+  {
     mobileImage: String,
     tabletImage: String,
-    desktopImage: String
+    desktopImage: String,
+    altText: 
+    {
+      type: String,
+      default: 'Responsive background image'
+    }
   });
 </script>
