@@ -87,7 +87,7 @@
         getData.value = await getRequest('/crew');
     });
 
-    function updateCurrentIndex(index) 
+    const updateCurrentIndex = (index) =>
     {
         currentIndex.value = index;
     }

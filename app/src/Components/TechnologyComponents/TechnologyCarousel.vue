@@ -4,12 +4,10 @@
         class='absolute w-full pt-20 h-full'>
         
         <div 
-            class='relative w-full '>
+            class='relative w-full'>
             <v-carousel
                 :show-arrows='false'
                 color='white'
-                :cycle="true"
-                interval="3500"
                 hide-delimiter-background
                 hide-delimiters
                 height='300'
@@ -20,15 +18,23 @@
                     v-for='(tech, index) in getData?.technology'
                     :key='index'>
                     <div 
-                        class='relative w-full h-full'>
-                        <img
-                            :src='tech?.images?.portrait' 
+                        class='flex flex-col justify-center align-center relative w-full h-full'>
+                        <img v-if="currentIndex !== 2"
+                            :src='tech?.images?.portrait'
                             :draggable='false'
                             :srcset='`${tech?.images?.portrait} 480w, ${tech?.images?.landscape} 300w`'
-                            sizes='(max-width: 373px) 500px, 600px' 
+                            sizes='(max-width: 375px) 500px, 600px'
                             :alt="`${tech?.name}'s image`"
-                            class='w-full h-[373px] object-cover object-bottom'
+                            class='min-w-full w-auto min-h-[375px] h-auto object-bottom'
                         />
+                        <img v-else
+                            :src='tech?.images?.portrait'
+                            :draggable='false'
+                            :srcset='`${tech?.images?.portrait} 275w, ${tech?.images?.landscape} 300w`'
+                            sizes='(max-width: 275px) 500px, 600px'
+                            :alt="`${tech?.name}'s image`"
+                            class='min-h-[275px]'
+                            />
                     </div>
                 </v-carousel-item>           
             </v-carousel>
@@ -51,16 +57,13 @@
                         {{ index + 1 }}
                     </button>
                 </div>
-                
             </div>
 
             <div 
                 class="flex flex-col text-center justify-center align-center w-full text-[#8b8a91] text-[22px] pt-8 tracking-wide h-[14em]"
                 style="font-family: var(--ff-bellefair)">
 
-                <h2
-                    > THE TERMINOLOGY...
-                </h2>
+                <h2> THE TERMINOLOGY...</h2>
     
                 <h3 
                     class="text-white text-[28px] pt-2 font-thin"
@@ -73,7 +76,6 @@
                     > {{ getData?.technology[currentIndex]?.description }}
                 </p>
             </div>
-
         </div>
     </div>
     
@@ -99,7 +101,7 @@
         getData.value = await getRequest('/technology');
     });
 
-    function updateCurrentIndex(index) 
+    const updateCurrentIndex = (index) =>
     {
         currentIndex.value = index;
     }
