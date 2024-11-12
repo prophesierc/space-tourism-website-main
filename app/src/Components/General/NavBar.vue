@@ -1,8 +1,8 @@
 <template>
   <v-container
     class="flex absolute top-0 left-0" 
-    style="font-family: var(--ff-barlow-condensed);"
-  >
+    style="font-family: var(--ff-barlow-condensed);">
+
     <v-row align="center" justify="space-between" class="w-full">
       <v-col cols="auto">
         <img 
@@ -15,7 +15,10 @@
       </v-col>
       
       <v-col cols="auto"> 
+
+        <!-- mobile -->
         <img 
+          v-if="resolutions.isMobile"
           v-lazy="OpenDrawer"
           :draggable="false"
           @click="drawer = !drawer" 
@@ -23,6 +26,48 @@
           class="w-full h-full" 
           aria-label="Open the main menu"
         />
+
+        <!-- tablet -->
+        <v-list
+          v-if="resolutions.isTablet"
+          class="flex flex-row bg-blue-900">
+
+          <v-list-item value="home" to="/" aria-label="Navigate to Home page">
+              <template v-slot:default>
+                <p class="font-thin">HOME</p>
+              </template>
+          </v-list-item>
+
+          <v-list-item value="destination" to="/destination" aria-label="Navigate to Destination page">
+            <template v-slot:prepend>
+              <p class="font-bold tracking-widest">01</p>
+            </template>
+              <template v-slot:default>
+                <p class="tracking-widest font-thin">DESTINATION</p>
+              </template>
+          </v-list-item>
+        
+          <v-list-item value="crew" to="/crew" aria-label="Navigate to Crew page">
+            <template v-slot:prepend>
+              <p class="font-bold tracking-widest">02</p>
+            </template>
+              <template v-slot:default>
+                <p class="tracking-widest font-thin">CREW</p>
+              </template>
+          </v-list-item>
+        
+          <v-list-item value="technology" to="/technology" aria-label="Navigate to Technology page">
+            <template v-slot:prepend>
+              <p class="font-bold tracking-widest">03</p>
+            </template>
+              <template v-slot:default>
+                <p class="font-thin">TECHNOLOGY</p>
+              </template>
+          </v-list-item>
+
+        </v-list>
+
+        <!-- desktop -->
       </v-col>
     </v-row>
     
@@ -82,7 +127,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-container>
+  </v-container> 
 </template>
 
 <script setup>
@@ -90,7 +135,29 @@
   import Logo from '@/assets/shared/logo.svg';
   import OpenDrawer from '@/assets/shared/icon-hamburger.svg';
   import CloseDrawer from '@/assets/shared/icon-close.svg';
+  import { ref, onMounted, onUnmounted, computed } from 'vue';
 
-  import { ref } from 'vue';
   const drawer = ref(false);
+  const windowWidth = ref(window.innerWidth);
+  const resolutions = computed(() => 
+  ({
+    isDesktop: windowWidth.value > 768,
+    isTablet: windowWidth.value <= 768 && windowWidth.value > 445,
+    isMobile: windowWidth.value <= 445
+  }));
+
+  const resizeHandler = () => 
+  {
+    windowWidth.value = window.innerWidth;
+  };
+
+  onMounted(() => 
+  {
+    window.addEventListener('resize', resizeHandler);
+  });
+
+  onUnmounted(() => 
+  {
+   window.removeEventListener('resize', resizeHandler);
+  });
 </script>
