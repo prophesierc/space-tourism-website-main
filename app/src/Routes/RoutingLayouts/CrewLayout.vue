@@ -3,7 +3,7 @@
     <!-- allows v-app stylings to prevent overflow due to imageHandler -->
     <v-app>
       <CrewContentComponent />
-      <NavBar />
+      <NavBar :activeIndex="2" />
       <ImageHandler 
         :mobileImage="BackgroundHomeMobile"
         :tabletImage="BackgroundHomeTablet"

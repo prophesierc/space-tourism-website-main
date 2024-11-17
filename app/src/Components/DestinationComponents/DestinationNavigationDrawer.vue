@@ -6,7 +6,6 @@
           <v-btn-toggle
             class="text-white"
             v-model="selectedButton"
-            selected-class="active-btn"
             aria-label="Select a destination"
           >
             <v-btn 

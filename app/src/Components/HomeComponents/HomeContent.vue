@@ -5,7 +5,7 @@
         <div id="content__container" 
             class="flex flex-col justify-center align-center m-4">
 
-            <h1 class="text-[16px] tracking-widest text-[#d0d6f9]" aria-label="Introductory text about traveling to space">
+            <h1 class="text-[16px] tracking-widest text-[#d0d6f9] min-[526px]:mt-20" aria-label="Introductory text about traveling to space">
                 SO, YOU WANT TO TRAVEL TO
             </h1>
 

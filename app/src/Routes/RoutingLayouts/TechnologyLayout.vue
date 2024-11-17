@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <NavBar />
+        <NavBar :activeIndex="3" />
         <TechnologyContentComponents />
         <ImageHandler 
         :mobileImage="BackgroundTechnologyMobile"

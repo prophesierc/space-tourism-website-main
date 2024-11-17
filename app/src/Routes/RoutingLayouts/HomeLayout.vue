@@ -2,7 +2,7 @@
   <div class="w-screen h-screen overflow-hidden">
     <v-app>
       <HomeContent />
-      <NavBar />
+      <NavBar :activeIndex="0" />
       <ImageHandler 
         :mobileImage="BackgroundHomeMobile"
         :tabletImage="BackgroundHomeTablet"

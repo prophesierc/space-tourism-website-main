@@ -1,7 +1,9 @@
 <template>
     <div 
         id="header__container" 
-        class="flex flex-col items-center mb-auto w-auto">
+        class="flex flex-col items-center mb-auto w-screen 
+            min-[526px]:items-start min-[526px]:ml-10"
+        >
         <span 
             class="flex text-[16px] tracking-widest " 
             aria-label="Page number and introduction text">
