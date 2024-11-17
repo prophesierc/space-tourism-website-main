@@ -29,12 +29,13 @@
     <div class="text-white relative flex flex-col items-center h-0">
       <h2
         class="text-[60px] tracking-tight"
-        style="font-family: var(--ff-bellefair)"
+        style="font-family: var(--ff-bellefair); margin-bottom: clamp(1rem, 6vw, 4rem)"
         aria-labelledby="destination-name"
         >{{ getData?.destinations[index]?.name.toUpperCase() }}
       </h2>
       <p 
-        class="text-[16px] text-center mx-11 tracking-normal font-[300] text-[#d0d6f9]"
+        class="text-[16px] text-center mx-11 tracking-normal font-[300] text-[#d0d6f9]
+          sm:px-36"
         aria-describedby="destination-description"
         >{{ getData?.destinations[index]?.description }}
         <span>
@@ -42,29 +43,32 @@
         </span>
       </p>
 
-      <h3 class="text-center" style="font-family: var(--ff-bellefair)">
-        <span 
-          class="text-[#d0d6f9] text-[12px] tracking-wide font-thin"
-          >AVG. DISTANCE
-        </span>
-        <p 
-          class="text-white text-[28px] tracking-wide pb-5"
-          aria-describedby="destination-distance"
-          >{{ getData?.destinations[index]?.distance.toUpperCase() }}
-        </p>
-      </h3>
-
-      <h4 class="text-center" style="font-family: var(--ff-bellefair)">
-        <span 
-          class="text-[#d0d6f9] text-[12px] tracking-wide font-thin"
-          >EST. TRAVEL TIME
-        </span>
-        <p 
-          class="text-white text-[28px] tracking-wide"
-          aria-describedby="destination-travel-time"
-          >{{ getData?.destinations[index]?.travel.toUpperCase() }}
-        </p>
-      </h4>
+      <div class="flex flex-col w-screen justify-center
+        min-[525px]:flex-row min-[525px]:gap-x-[10em]">
+        <h3 class="text-center" style="font-family: var(--ff-bellefair)">
+          <span 
+            class="text-[#d0d6f9] text-[12px] tracking-wide font-thin"
+            >AVG. DISTANCE
+          </span>
+          <p 
+            class="text-white text-[28px] tracking-wide pb-5"
+            aria-describedby="destination-distance"
+            >{{ getData?.destinations[index]?.distance.toUpperCase() }}
+          </p>
+        </h3>
+  
+        <h4 class="text-center" style="font-family: var(--ff-bellefair)">
+          <span 
+            class="text-[#d0d6f9] text-[12px] tracking-wide font-thin"
+            >EST. TRAVEL TIME
+          </span>
+          <p 
+            class="text-white text-[28px] tracking-wide"
+            aria-describedby="destination-travel-time"
+            >{{ getData?.destinations[index]?.travel.toUpperCase() }}
+          </p>
+        </h4>
+      </div>
     </div>
 
   </div>

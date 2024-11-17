@@ -1,7 +1,7 @@
 <template>
   <div 
     id="destination__content__container" 
-    class="flex flex-col absolute w-full items-center mt-[6em] h-[25em]" 
+    class="flex flex-col absolute w-screen items-center mt-[6em] h-[25em]"
     style="font-family: var(--ff-barlow-condensed);"
     aria-labelledby="destination-header"
   >
@@ -49,3 +49,4 @@
     getData.value = data; 
   });
 </script>
+
