@@ -1,17 +1,19 @@
 <template>
   <div 
-    class="absolute flex flex-col items-center pb-10 h-full" 
+    class="absolute flex flex-col items-center pb-10 h-screen" 
     v-if="getData?.destinations">
 
     <keep-alive>
       <v-img
         :key="getData?.destinations[index]" 
-        :width="200"
         :src="getData?.destinations[index]?.images?.png" 
+        :srcset="`${ getData?.destinations[index]?.images?.png } 480w, 
+          ${ getData?.destinations[index]?.images?.webp } 300w`"
         :draggable="false"
-        class="mb-10"
-        alt="Destination Image"
-        aria-label="Destination image">
+        :alt="`${ getData?.destinations[index]?.name }'s image`"
+        class="destination__image mt-[3em] mb-[5em]"
+        aria-label="Destination image"
+        >
 
         <template v-slot:placeholder>
           <div class="flex align-center justify-center items-center fill-height">
@@ -26,7 +28,7 @@
       </v-img>
     </keep-alive>
 
-    <div class="text-white relative flex flex-col items-center h-0">
+    <div class="text-white relative flex flex-col items-center h-auto mb-20">
       <h2
         class="text-[60px] tracking-tight"
         style="font-family: var(--ff-bellefair); margin-bottom: clamp(1rem, 6vw, 4rem)"
@@ -89,3 +91,17 @@
     getData.value = await getRequest('/destinations');
   });
 </script>
+
+<style scoped>
+  @media (max-width: 525px) {
+    .destination__image {
+      width: 200px !important;
+    }
+  }
+  @media (min-width: 526px) {
+    .destination__image {
+      margin-top: 2em;
+      width: 250px !important;
+    }
+  }
+</style>

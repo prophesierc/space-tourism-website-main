@@ -1,7 +1,8 @@
 <template>  
-  <v-list nav bg-color="transparent" class="pb-9">
+  <v-list nav bg-color="transparent" 
+    class="absolute top-[14em] min-[525px]:top-[16em]">
     <v-container>
-      <v-row justify="center">
+      <v-row>
         <v-col>
           <v-btn-toggle
             class="text-white"

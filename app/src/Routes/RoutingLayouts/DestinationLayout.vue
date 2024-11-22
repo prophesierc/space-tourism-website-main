@@ -1,15 +1,18 @@
 <template>
-  <v-app>
-    <NavBar :activeIndex="1" />
-      <DestinationContentComponent />
-      <ImageHandler 
+  <v-app class="min-[525px]:overflow-hidden">
+    <div class="relative min-h-screen">
+      <ImageHandler
+      class="absolute"
       :mobileImage="BackgroundDestinationMobile"
       :tabletImage="BackgroundDestinationTablet"
       :desktopImage="BackgroundDestinationDesktop"
       />
+      <NavBar :activeIndex="1" />
+      <DestinationContentComponent />
+    </div>
   </v-app>
 </template>
-  
+
 <script setup>
   defineOptions({ name: 'DestinationLayout' });
   import { defineAsyncComponent } from 'vue';

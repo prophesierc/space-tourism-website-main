@@ -26,18 +26,18 @@
                             v-show="currentIndex !== 2" 
                             :src="tech?.images?.portrait"
                             :draggable="false"
-                            :srcset="`${tech?.images?.portrait} 480w, ${tech?.images?.landscape} 300w`"
+                            :srcset="`${ tech?.images?.portrait } 480w, ${ tech?.images?.landscape } 300w`"
                             sizes="(max-width: 375px) 500px, 600px"
-                            :alt="`${tech?.name}'s image`"
+                            :alt="`${ tech?.name }'s image`"
                             class="min-w-full w-auto min-h-[375px] h-auto object-bottom"
                         />
                         <img 
                             v-show="currentIndex === 2" 
                             :src="tech?.images?.portrait"
                             :draggable="false"
-                            :srcset="`${tech?.images?.portrait} 275w, ${tech?.images?.landscape} 300w`"
+                            :srcset="`${ tech?.images?.portrait } 275w, ${ tech?.images?.landscape } 300w`"
                             sizes="(max-width: 275px) 500px, 600px"
-                            :alt="`${tech?.name}'s image`"
+                            :alt="`${ tech?.name }'s image`"
                             class="min-h-[275px]"
                         />
                     </div>
