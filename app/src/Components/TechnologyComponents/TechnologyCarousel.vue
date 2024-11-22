@@ -8,7 +8,7 @@
             <v-carousel
                 :show-arrows="false"
                 color="white"
-                :cycle="true"
+                :cycle="false"
                 interval="3500"
                 hide-delimiter-background
                 hide-delimiters
@@ -26,19 +26,25 @@
                             v-show="currentIndex !== 2" 
                             :src="tech?.images?.portrait"
                             :draggable="false"
-                            :srcset="`${ tech?.images?.portrait } 480w, ${ tech?.images?.landscape } 300w`"
-                            sizes="(max-width: 375px) 500px, 600px"
-                            :alt="`${ tech?.name }'s image`"
-                            class="min-w-full w-auto min-h-[375px] h-auto object-bottom"
+                            :srcset="`
+                                ${tech?.images?.portrait} 600w,
+                                ${tech?.images?.landscape} 800w
+                            `"
+                            sizes="(max-width: 600px) 100vw, 800px"
+                            :alt="`${tech?.name}'s image`"
+                            class="w-full h-auto object-cover object-bottom"
                         />
                         <img 
                             v-show="currentIndex === 2" 
                             :src="tech?.images?.portrait"
                             :draggable="false"
-                            :srcset="`${ tech?.images?.portrait } 275w, ${ tech?.images?.landscape } 300w`"
-                            sizes="(max-width: 275px) 500px, 600px"
+                            :srcset="`
+                                ${tech?.images?.portrait} 600w,
+                                ${tech?.images?.landscape} 800w
+                            `"
+                            sizes="(max-width: 600px) 100vw, 800px"
                             :alt="`${ tech?.name }'s image`"
-                            class="min-h-[275px]"
+                            class="w-full h-auto object-cover object-bottom"
                         />
                     </div>
                 </v-carousel-item>           

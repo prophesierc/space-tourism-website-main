@@ -189,8 +189,8 @@
   const resolutions = computed(() => 
   ({
     isDesktop: windowWidth.value > 768,
-    isTablet: windowWidth.value <= 789 && windowWidth.value > 525,
-    isMobile: windowWidth.value <= 525,
+    isTablet: windowWidth.value <= 789 && windowWidth.value > 615,
+    isMobile: windowWidth.value <= 615,
   }));
 
   const resizeHandler = () => 
