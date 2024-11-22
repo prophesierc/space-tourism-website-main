@@ -93,12 +93,12 @@
 </script>
 
 <style scoped>
-  @media (max-width: 614px) {
+  @media (max-width: 615px) {
     .destination__image {
       width: 200px !important;
     }
   }
-  @media (min-width: 615px) {
+  @media (min-width: 616px) {
     .destination__image {
       margin-top: 2em;
       width: 250px !important;

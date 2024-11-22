@@ -2,7 +2,7 @@
     <div 
         id="header__container" 
         class="flex flex-col items-center mb-auto w-screen 
-            min-[526px]:items-start min-[526px]:ml-10"
+            min-[616px]:items-start min-[616px]:ml-10"
         >
         <span 
             class="flex text-[16px] tracking-widest " 

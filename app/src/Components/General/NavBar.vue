@@ -96,13 +96,14 @@
 
     <!-- mobile drawer -->
     <v-navigation-drawer 
+      v-if="resolutions.isMobile"
       v-model="drawer" 
       temporary 
       app 
       :location="$vuetify.display.mobile ? 'right' : undefined"
       class="bg-transparent backdrop-blur-sm"
       aria-label="Main navigation drawer"
-    >
+      >
       <v-list-item>
         <img 
           v-lazy="CloseDrawer"
