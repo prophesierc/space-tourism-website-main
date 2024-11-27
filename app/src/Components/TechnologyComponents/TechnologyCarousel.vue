@@ -19,35 +19,20 @@
                 <v-carousel-item 
                     v-for="(tech, index) in getData?.technology"
                     :key="index">
-                    <div 
-                        class="flex flex-col justify-center align-center relative w-full h-full">
-
+                    <div class="flex flex-col h-full w-full">
                         <img 
-                            v-show="currentIndex !== 2" 
                             :src="tech?.images?.portrait"
                             :draggable="false"
                             :srcset="`
                                 ${tech?.images?.portrait} 600w,
-                                ${tech?.images?.landscape} 800w
+                                ${tech?.images?.landscape} 1200w
                             `"
-                            sizes="(max-width: 600px) 100vw, 800px"
+                            sizes="(max-width: 600px) 100vw, 600px"
                             :alt="`${tech?.name}'s image`"
-                            class="w-full h-auto object-cover object-bottom"
-                        />
-                        <img 
-                            v-show="currentIndex === 2" 
-                            :src="tech?.images?.portrait"
-                            :draggable="false"
-                            :srcset="`
-                                ${tech?.images?.portrait} 600w,
-                                ${tech?.images?.landscape} 800w
-                            `"
-                            sizes="(max-width: 600px) 100vw, 800px"
-                            :alt="`${ tech?.name }'s image`"
-                            class="w-full h-auto object-cover object-bottom"
+                            class="w-full h-full object-cover"
                         />
                     </div>
-                </v-carousel-item>           
+                </v-carousel-item>         
             </v-carousel>
 
             <div class="flex justify-center items-center pt-5">
