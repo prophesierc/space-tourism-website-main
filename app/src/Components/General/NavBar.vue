@@ -5,16 +5,20 @@
 
     <v-row align="center" justify="space-between" 
       class="w-full">
+      
       <v-col 
         cols="auto">
+        <!-- Logo  -->
         <img 
           v-lazy="Logo"
           alt="Website Logo" 
           :draggable="false"
           :class="{'w-full h-full': resolutions.isMobile, 
-            'w-full h-full mb-8': resolutions.isTablet}"
+            'w-full h-full mb-8': !resolutions.isMobile }" 
+          class="min-[768px]:mt-10"
           aria-label="Company logo"
         />
+
       </v-col>
       
       <v-col 
@@ -34,8 +38,8 @@
         <!-- tablet -->
         <v-list 
           :ripple="false"
-          v-if="resolutions.isTablet"
-          class="flex flex-row text-white bottom-4 left-4 h-20 max-w-[600px] w-[80vw] justify-end"
+          v-if="!resolutions.isMobile"
+          class="flex flex-row text-white bottom-4 left-4 h-20 max-w-[600px] w-[80vw] justify-end overflow-hidden min-[768px]:mt-10"
           style="background-color: #252831 !important;">
 
           <v-list-item 
@@ -190,7 +194,7 @@
   const resolutions = computed(() => 
   ({
     isDesktop: windowWidth.value > 768,
-    isTablet: windowWidth.value <= 789 && windowWidth.value > 615,
+    isTablet: windowWidth.value <= 768 && windowWidth.value > 615,
     isMobile: windowWidth.value <= 615,
   }));
 
@@ -213,6 +217,7 @@
 <style scoped>
   .active-class {
     border-bottom: 3px solid white;
-    padding-top: 6px;
+    padding-bottom: 8px;
+    height: 70px;    
   }
 </style>

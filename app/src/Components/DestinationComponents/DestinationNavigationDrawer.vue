@@ -1,6 +1,9 @@
 <template>  
   <v-list nav bg-color="transparent" 
-    class="absolute top-[16em] max-[524px]:top-[14em] min-[525px]:top-[16em]">
+    class="absolute 
+      max-[524px]:top-[27vh] 
+      min-[525px]:top-[30vh] 
+      min-[768px]:top-[22vh]">
     <v-container>
       <v-row>
         <v-col>
