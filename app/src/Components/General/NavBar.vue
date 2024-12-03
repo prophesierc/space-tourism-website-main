@@ -12,7 +12,7 @@
           alt="Website Logo" 
           :draggable="false"
           :class="{'w-full h-full': resolutions.isMobile, 
-            'w-full h-full mb-8': resolutions.isTabletOrDesktop}"
+            'w-full h-full mb-8': resolutions.isTablet}"
           aria-label="Company logo"
         />
       </v-col>
@@ -34,7 +34,7 @@
         <!-- tablet -->
         <v-list 
           :ripple="false"
-          v-if="resolutions.isTabletOrDesktop"
+          v-if="resolutions.isTablet"
           class="flex flex-row text-white bottom-4 left-4 h-20 max-w-[600px] w-[80vw] justify-end"
           style="background-color: #252831 !important;">
 
@@ -91,7 +91,6 @@
         </v-list>
 
         <!-- desktop -->
-        <!-- need to make right w auto margin -->
       </v-col>
     </v-row>
 
@@ -190,7 +189,8 @@
 
   const resolutions = computed(() => 
   ({
-    isTabletOrDesktop: windowWidth.value > 615,
+    isDesktop: windowWidth.value > 768,
+    isTablet: windowWidth.value <= 789 && windowWidth.value > 615,
     isMobile: windowWidth.value <= 615,
   }));
 
