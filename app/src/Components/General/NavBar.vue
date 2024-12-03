@@ -18,7 +18,6 @@
           class="min-[768px]:mt-10"
           aria-label="Company logo"
         />
-
       </v-col>
       
       <v-col 
@@ -94,6 +93,11 @@
   
         </v-list>
 
+        <!-- Desktop HR WIP -->
+        <hr 
+        v-if="resolutions.isDesktop"
+        class="absolute w-[40vw] top-[6vh] left-[10vw] h-px my-8 border-0 bg-gray-700">
+        
         <!-- desktop -->
       </v-col>
     </v-row>
