@@ -96,7 +96,7 @@
         <!-- Desktop HR WIP -->
         <hr 
         v-if="resolutions.isDesktop"
-        class="absolute w-[40vw] top-[6vh] left-[10vw] h-px my-8 border-0 bg-gray-700">
+        class="absolute w-[30%] top-[48px] left-[10%] h-px my-8 border-0 bg-gray-700">
         
         <!-- desktop -->
       </v-col>
