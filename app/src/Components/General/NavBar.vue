@@ -1,13 +1,12 @@
 <template>
   <v-container
-    class="flex absolute top-0 left-0" 
+    class="flex absolute top-0 left-0 min-w-[100vw]" 
     style="font-family: var(--ff-barlow-condensed);">
 
-    <v-row align="center" justify="space-between" 
-      class="w-full">
+    <v-row align="center" justify="space-between">
       
-      <v-col 
-        cols="auto">
+      <v-col cols="auto">
+
         <!-- Logo  -->
         <img 
           v-lazy="Logo"
@@ -20,8 +19,7 @@
         />
       </v-col>
       
-      <v-col 
-        cols="auto"> 
+      <v-col cols="auto" class="flex flex-row justify-end "> 
 
         <!-- mobile -->
         <img 
@@ -34,11 +32,13 @@
           aria-label="Open the main menu"
         />
 
-        <!-- tablet -->
+        <!-- tablet / Desktop -->
         <v-list 
           :ripple="false"
           v-if="!resolutions.isMobile"
-          class="flex flex-row text-white bottom-4 left-4 h-20 max-w-[600px] w-[80vw] justify-end overflow-hidden min-[768px]:mt-10"
+          class="flex flex-row text-white bottom-4 left-4 h-20 
+            max-w-[600px] w-[80vw] justify-end 
+            overflow-hidden min-[768px]:mt-10 "
           style="background-color: #252831 !important;">
 
           <v-list-item 
@@ -96,9 +96,9 @@
         <!-- Desktop HR WIP -->
         <hr 
         v-if="resolutions.isDesktop"
-        class="absolute w-[30%] top-[48px] left-[10%] h-px my-8 border-0 bg-gray-700">
+        class="absolute w-[30%] top-[48px] 
+          left-[10%] h-px my-8 border-0 bg-gray-700">
         
-        <!-- desktop -->
       </v-col>
     </v-row>
 
