@@ -1,7 +1,7 @@
 <template>
     <div 
         v-if="getData?.technology" 
-        class="absolute w-full pt-20 h-full">
+        class="absolute w-full pt-20 md:mt-20">
     
         <div 
             class="relative w-full">
