@@ -14,7 +14,7 @@
           :draggable="false"
           :class="{'w-full h-full': resolutions.isMobile, 
             'w-full h-full mb-8': !resolutions.isMobile }" 
-          class="min-[768px]:mt-10"
+          class="min-[768px]:mt-10 min-[768px]:pl-10"
           aria-label="Company logo"
         />
       </v-col>
@@ -36,10 +36,12 @@
         <v-list 
           :ripple="false"
           v-if="!resolutions.isMobile"
-          class="flex flex-row text-white bottom-4 left-4 h-20 
-            max-w-[600px] w-[80vw] justify-end 
-            overflow-hidden min-[768px]:mt-10 "
-          style="background-color: #252831 !important;">
+          :class="[ 
+            'flex flex-row text-white bottom-4 left-4 h-20 max-w-[600px] justify-end overflow-hidden min-[768px]:mt-10',
+            resolutions.isDesktop 
+              ? 'bg-transparent backdrop-blur-md backdrop-opacity-100 border pr-10 pl-15' 
+              : 'custom-bg'
+          ]">
 
           <v-list-item 
             to="/" 
@@ -95,10 +97,10 @@
 
         <!-- Desktop HR WIP -->
         <hr 
-        v-if="resolutions.isDesktop"
-        class="absolute w-[30%] top-[48px] 
-          left-[10%] h-px my-8 border-0 bg-gray-700">
-        
+          v-if="resolutions.isDesktop"
+          class="w-[22%] min-[850px]:w-[27%] min-[1000px]:w-[37%] min-[1200px]:w-[44%] min-[1500px]:w-[52%] min-[1920px]:w-[58%]
+          absolute top-[48px] left-[15%] h-px my-8 border-0 bg-gray-700">
+
       </v-col>
     </v-row>
 
@@ -197,8 +199,8 @@
 
   const resolutions = computed(() => 
   ({
-    isDesktop: windowWidth.value > 768,
-    isTablet: windowWidth.value <= 768 && windowWidth.value > 615,
+    isDesktop: windowWidth.value >= 768,
+    isTablet: windowWidth.value < 768 && windowWidth.value > 615,
     isMobile: windowWidth.value <= 615,
   }));
 
@@ -223,5 +225,9 @@
     border-bottom: 3px solid white;
     padding-bottom: 8px;
     height: 70px;    
+  }
+
+  .custom-bg {
+    background-color: #252831 !important;
   }
 </style>
