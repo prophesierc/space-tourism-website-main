@@ -1,9 +1,11 @@
 <template>
-  <v-container class="flex h-full mt-auto">
-    <v-row align="center" justify="center" class="flex h-full mt-auto">
-      <v-col cols="auto" class="flex flex-row h-80 items-end">
+  <v-container class="flex h-full w-screen mt-auto">
+    <v-row align="center" justify="center">
+      <v-col cols="auto" class="flex flex-row h-80 items-center 
+        min-[768px]:absolute min-[768px]:left-[75vw] 
+        min-[768px]:bottom-[20%]">
         <v-btn 
-          class="-mb-10 min-[526px]:mb-10"
+          class="-mb-10 min-[526px]:mb-10 "
           icon=""
           size="144" 
           text="EXPLORE"
