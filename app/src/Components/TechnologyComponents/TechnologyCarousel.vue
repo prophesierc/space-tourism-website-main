@@ -1,10 +1,10 @@
 <template>
     <div 
         v-if="getData?.technology" 
-        class="absolute w-full pt-20 md:mt-20">
+        class="absolute w-full pt-20 flex flex-col align-center justify-center">
     
         <div 
-            class="relative w-full">
+            class="relative w-full flex flex-col min-[768px]:flex-row align-center justify-center h-[75vh]">
             <v-carousel
                 :show-arrows="false"
                 color="white"
@@ -14,19 +14,20 @@
                 hide-delimiters
                 height="300"
                 @change="updateCurrentIndex"
-                v-model="currentIndex">
-
+                v-model="currentIndex"
+                class="min-[768px]:order-3">
+    
                 <v-carousel-item 
                     v-for="(tech, index) in getData?.technology"
                     :key="index">
-                    <div class="flex align-center justify-center h-[100%] w-[100%]">
+                    <div class="flex flex-row align-center justify-center h-[100%] w-[100%]">
                         <img 
                             :src="index <= 1 ? tech?.images?.portrait : tech?.images?.landscape" 
                             :draggable="false"
                             :alt="`${tech?.name}'s image`"
-                            :class="[
-                                'h-[85%] w-[100%] object-cover',
-                                index === 0 ? 'max-[616px]:object-[0%_100%] min-[616px]:object-[0%_-200px]' : '',
+                            :class="[ 
+                                'h-[85%] w-[100%] object-cover min-[768px]:h-[300px] min-[768px]:w-[40vw]',
+                                index === 0 ? 'max-[616px]:object-[0%_100%] min-[616px]:object-[0%_-200px] min-[768px]:object-[50%_50%]' : '',
                                 index === 1 ? 'max-[616px]:object-[50%_50%] min-[616px]:object-[0%_80%]' : '',
                                 index === 2 ? 'max-[616px]:object-[80%_0%]' : ''
                             ]"
@@ -34,7 +35,6 @@
                     </div>
                 </v-carousel-item>
 
-    
                 <template v-slot:placeholder>
                     <div class="flex align-center justify-center items-center fill-height">
                       <v-progress-circular
@@ -43,21 +43,20 @@
                         aria-label="Loading destination image"
                       ></v-progress-circular>
                     </div>
-                  </template>
-
+                </template>
             </v-carousel>
 
-            <div class="flex justify-center items-center pt-5">
-                <div class="flex space-x-5">
+            <div class="flex justify-center items-center pt-5 min-[768px]:order-1">
+                <div class="flex min-[768px]:space-x-0 space-x-5 min-[768px]:flex-col">
                     <button
                         v-for="(tech, index) in getData?.technology"
                         :key="index"
                         style="font-family: var(--ff-bellefair)"
-                        class="w-10 h-10 rounded-full flex items-center justify-center mt-5"
-                        :class="[
+                        class="w-10 h-10 rounded-full flex items-center justify-center mt-5 "
+                        :class="[ 
                             currentIndex === index 
                             ? 'bg-white text-black' 
-                            : 'bg-transparent text-white border-[1px] border-solid border-white'
+                            : 'bg-transparent text-white border-[1px] border-solid border-white '
                         ]"
                         @click="currentIndex = index"
                             >{{ index + 1 }}
@@ -66,7 +65,7 @@
             </div>
 
             <div 
-                class="flex flex-col text-center justify-center align-center w-full text-[#8b8a91] text-[22px] pt-8 tracking-wide h-[14em]"
+                class="flex flex-col text-center justify-center align-center w-full min-[768px]:order-2 text-[#8b8a91] text-[22px] pt-8 tracking-wide h-[14em]"
                 style="font-family: var(--ff-bellefair)">
 
                 <h2> THE TERMINOLOGY...</h2>
@@ -82,7 +81,6 @@
                         >{{ getData?.technology[currentIndex]?.description }}
                 </p>
             </div>
-
         </div>
     </div>
 
@@ -95,6 +93,7 @@
         />
     </div>
 </template>
+
 
 <script setup>
     defineOptions({ name: 'TechnologyCarousel' });
