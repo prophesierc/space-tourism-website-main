@@ -19,22 +19,21 @@
                 <v-carousel-item 
                     v-for="(tech, index) in getData?.technology"
                     :key="index">
-                    <div class="flex align-center justify-center flex-col h-[100%] w-[100%]">
+                    <div class="flex align-center justify-center h-[100%] w-[100%]">
                         <img 
-                            :src="tech?.images?.landscape" 
+                            :src="index <= 1 ? tech?.images?.portrait : tech?.images?.landscape" 
                             :draggable="false"
-                            :srcset="`
-                                ${tech?.images?.portrait} 600w,
-                                ${tech?.images?.landscape} 1200w
-                            `"
-                            sizes="(max-width: 600px) 100vw, 600px"
                             :alt="`${tech?.name}'s image`"
-                            class="h-[75%] w-[100%] object-fill
-                                min-[616px]:object-cover min-[616px]:object-[50%_5%]
-                                min-[768px]:w-[100%] min-[768px]:h-[100%] min-[768px]:object-fill"
+                            :class="[
+                                'h-[85%] w-[100%] object-cover',
+                                index === 0 ? 'max-[616px]:object-[0%_100%] min-[616px]:object-[0%_-200px]' : '',
+                                index === 1 ? 'max-[616px]:object-[50%_50%] min-[616px]:object-[0%_80%]' : '',
+                                index === 2 ? 'max-[616px]:object-[80%_0%]' : ''
+                            ]"
                         />
                     </div>
                 </v-carousel-item>
+
     
                 <template v-slot:placeholder>
                     <div class="flex align-center justify-center items-center fill-height">
