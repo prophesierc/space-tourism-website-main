@@ -2,6 +2,7 @@
     <div 
         v-if="getData?.technology" 
         class="absolute w-full pt-20 flex flex-col align-center justify-center">
+        <!-- need to fit page to vh -->
     
         <div 
             class="relative w-full flex flex-col min-[768px]:flex-row align-center justify-center h-[75vh]">
@@ -20,16 +21,17 @@
                 <v-carousel-item 
                     v-for="(tech, index) in getData?.technology"
                     :key="index">
-                    <div class="flex flex-row align-center justify-center h-[100%] w-[100%]">
+                    <div class="flex flex-row align-center justify-end h-[100%] w-[100%]">
                         <img 
                             :src="index <= 1 ? tech?.images?.portrait : tech?.images?.landscape" 
                             :draggable="false"
                             :alt="`${tech?.name}'s image`"
                             :class="[ 
-                                'h-[85%] w-[100%] object-cover min-[768px]:h-[300px] min-[768px]:w-[40vw]',
+                                'h-[85%] w-[100%] object-cover min-[768px]:h-[300px] min-[768px]:w-[40vw] ',
                                 index === 0 ? 'max-[616px]:object-[0%_100%] min-[616px]:object-[0%_-200px] min-[768px]:object-[50%_50%]' : '',
                                 index === 1 ? 'max-[616px]:object-[50%_50%] min-[616px]:object-[0%_80%]' : '',
                                 index === 2 ? 'max-[616px]:object-[80%_0%]' : ''
+                                // need to adjust fit of images at desktop
                             ]"
                         />
                     </div>
@@ -46,7 +48,7 @@
                 </template>
             </v-carousel>
 
-            <div class="flex justify-center items-center pt-5 min-[768px]:order-1">
+            <div class="flex justify-center items-center pt-5 min-[768px]:order-1 pl-10">
                 <div class="flex min-[768px]:space-x-0 space-x-5 min-[768px]:flex-col">
                     <button
                         v-for="(tech, index) in getData?.technology"
