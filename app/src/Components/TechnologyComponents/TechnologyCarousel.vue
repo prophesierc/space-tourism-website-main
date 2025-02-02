@@ -19,9 +19,9 @@
                 <v-carousel-item 
                     v-for="(tech, index) in getData?.technology"
                     :key="index">
-                    <div class="flex flex-col h-full w-full">
+                    <div class="flex align-center justify-center flex-col h-[100%] w-[100%]">
                         <img 
-                            :src="tech?.images?.portrait"
+                            :src="tech?.images?.landscape" 
                             :draggable="false"
                             :srcset="`
                                 ${tech?.images?.portrait} 600w,
@@ -29,10 +29,23 @@
                             `"
                             sizes="(max-width: 600px) 100vw, 600px"
                             :alt="`${tech?.name}'s image`"
-                            class="w-full h-full object-cover"
+                            class="h-[75%] w-[100%] object-fill
+                                min-[616px]:object-cover min-[616px]:object-[50%_5%]
+                                min-[768px]:w-[100%] min-[768px]:h-[100%] min-[768px]:object-fill"
                         />
                     </div>
-                </v-carousel-item>         
+                </v-carousel-item>
+    
+                <template v-slot:placeholder>
+                    <div class="flex align-center justify-center items-center fill-height">
+                      <v-progress-circular
+                        color="amber"
+                        indeterminate
+                        aria-label="Loading destination image"
+                      ></v-progress-circular>
+                    </div>
+                  </template>
+
             </v-carousel>
 
             <div class="flex justify-center items-center pt-5">
