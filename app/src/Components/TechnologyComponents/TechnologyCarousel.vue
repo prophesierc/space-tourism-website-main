@@ -9,7 +9,7 @@
             <v-carousel
                 :show-arrows="false"
                 color="white"
-                :cycle="false"
+                :cycle="true"
                 interval="3500"
                 hide-delimiter-background
                 hide-delimiters
@@ -28,11 +28,10 @@
                             :draggable="false"
                             :alt="`${tech?.name}'s image`"
                             :class="[ 
-                                'h-[100%] w-[100%] object-cover', 
-                                'min-[1400px]:h-full min-[1400px]:w-full min-[768px]:object-scale-down',
-                                index === 0 ? 'max-[616px]:object-[0%_100%] min-[616px]:object-[0%_-200px] min-[768px]:object-[50%_50%]' : '',
-                                index === 1 ? 'max-[616px]:object-[50%_50%] min-[616px]:object-[0%_80%]' : '',
-                                index === 2 ? 'min-[768px]:object-[50%_50%]' : ''
+                                'h-[100%] w-[100%] object-cover min-[768px]:object-scale-down',
+                                index === 0 ? 'max-[616px]:object-[0%_100%] min-[616px]:object-[0%_-200px] min-[768px]:object-[100%_50%]' : '',
+                                index === 1 ? 'max-[616px]:object-[50%_50%] min-[616px]:object-[0%_80%] min-[768px]:object-[100%_50%]' : '',
+                                index === 2 ? 'min-[768px]:object-[100%_50%]' : ''
                             ]"
                         />
                     </div>
