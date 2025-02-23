@@ -1,0 +1,1 @@
+import{f as r}from"./index-CYWXJ_Bb.js";function a(){return{getData:r([]),getRequest:async e=>{try{const t=await fetch(`/data${e}.json`,{method:"GET"});if(!t.ok)throw new Error("Network response was not ok");return await t.json()}catch(t){return console.error("Fetch error:",t),[]}}}}export{a as F};
