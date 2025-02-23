@@ -1,0 +1,1 @@
+import{f as r}from"./index-B53rG9-x.js";function a(){return{getData:r([]),getRequest:async e=>{try{const t=await fetch(`https://prophesierc.site${e}`,{method:"GET"});if(!t.ok)throw new Error("Network response was not ok");return await t.json()}catch(t){return console.error("Fetch error:",t),[]}}}}export{a as F};
