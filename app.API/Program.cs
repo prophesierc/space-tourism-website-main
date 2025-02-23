@@ -1,21 +1,20 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using DotNetEnv;
 using Microsoft.AspNetCore.RateLimiting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System.Collections.Generic;
-using System.IO;
+using System.Net; 
 using System.Text.Json;
-using System.Text;
 using System.Threading.RateLimiting;
 
 public class API
 {
     public static void Main(string[] args)
     {
+        Env.Load();
+
         var builder = WebApplication.CreateBuilder(args);
+
+        var certPath = Env.GetString("CERT_PATH");
+        var privateKeyPath = Env.GetString("PRIVATE_KEY_PATH");
 
         // Rate Limiting
         builder.Services.AddRateLimiter(options =>
@@ -58,7 +57,19 @@ public class API
             });
         });
 
+        // Kestrel server
+        builder.WebHost.ConfigureKestrel(options =>
+        {
+            options.Listen(IPAddress.Any, 5001, listenOptions =>
+            {
+                listenOptions.UseHttps(certPath, privateKeyPath);
+            });
+        });
+
         var app = builder.Build();
+
+        // Serve static files from wwwroot folder
+        app.UseStaticFiles();
 
         // Apply CORS policy
         app.UseCors("AllowSpecificOrigin");
@@ -86,7 +97,6 @@ public class API
             var jsonData = await File.ReadAllTextAsync("wwwroot/data/destinations.json");
             return Results.Json(JsonSerializer.Deserialize<Dictionary<string, object>>(jsonData));
         }).RequireRateLimiting("fixed");
-
 
         app.MapGet("/technology", async (ILogger<API> logger) =>
         {

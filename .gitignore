@@ -27,3 +27,4 @@ app.API/obj/Debug/net8.0/App.API.AssemblyInfoInputs.cache
 /.vscode
 /.vscode/settings.json
 .codegpt
+/app.API/.env
