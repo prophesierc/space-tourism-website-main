@@ -8,10 +8,9 @@ export function FetchAPI()
     {
         try 
         {
-            const response = await fetch(`https://prophesierc.site${endpoint}`, 
-            {
+            const response = await fetch(`/space-tourism-website-main/data${endpoint}.json`, {
                 method: 'GET',
-            });
+              });   
 
             if (!response.ok) 
             {
