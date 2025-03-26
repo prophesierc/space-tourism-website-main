@@ -27,7 +27,7 @@
   );
 
   // ImageHandler prop images
-  import BackgroundHomeMobile from '@/assets/home/background-home-mobile.jpg';
-  import BackgroundHomeTablet from '@/assets/home/background-home-tablet.jpg';
-  import BackgroundHomeDesktop from '@/assets/home/background-home-desktop.jpg';
+  import BackgroundHomeMobile from '/assets/home/background-home-mobile.jpg';
+  import BackgroundHomeTablet from '/assets/home/background-home-tablet.jpg';
+  import BackgroundHomeDesktop from '/assets/home/background-home-desktop.jpg';
 </script>

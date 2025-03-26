@@ -27,8 +27,8 @@
     import('@/Components/CrewComponents/CrewContentComponent.vue'));  
 
   // ImageHandler prop images
-  import BackgroundHomeMobile from '@/assets/crew/background-crew-mobile.jpg';
-  import BackgroundHomeTablet from '@/assets/crew/background-crew-tablet.jpg';
-  import BackgroundHomeDesktop from '@/assets/crew/background-crew-desktop.jpg';
+  import BackgroundHomeMobile from '/assets/crew/background-crew-mobile.jpg';
+  import BackgroundHomeTablet from '/assets/crew/background-crew-tablet.jpg';
+  import BackgroundHomeDesktop from '/assets/crew/background-crew-desktop.jpg';
 </script>
   

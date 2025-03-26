@@ -24,8 +24,8 @@
         import('@/Components/TechnologyComponents/TechnologyContentComponents.vue'));  
 
     // ImageHandler prop images
-    import BackgroundTechnologyMobile from '@/assets/technology/background-technology-mobile.jpg';
-    import BackgroundTechnologyTablet from '@/assets/technology/background-technology-tablet.jpg';
-    import BackgroundTechnologyDesktop from '@/assets/technology/background-technology-desktop.jpg';
+    import BackgroundTechnologyMobile from '/assets/technology/background-technology-mobile.jpg';
+    import BackgroundTechnologyTablet from '/assets/technology/background-technology-tablet.jpg';
+    import BackgroundTechnologyDesktop from '/assets/technology/background-technology-desktop.jpg';
 </script>
     

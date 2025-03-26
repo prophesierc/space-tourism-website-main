@@ -8,7 +8,7 @@ export function FetchAPI()
     {
         try 
         {
-            const response = await fetch(`/space-tourism-website-main/data${endpoint}.json`, {
+            const response = await fetch(`/data${endpoint}.json`, {
                 method: 'GET',
               });   
 

@@ -180,9 +180,9 @@
 
 <script setup>
   defineOptions({ name: 'NavBar' });
-  import Logo from '@/assets/shared/logo.svg';
-  import OpenDrawer from '@/assets/shared/icon-hamburger.svg';
-  import CloseDrawer from '@/assets/shared/icon-close.svg';
+  import Logo from '/assets/shared/logo.svg';
+  import OpenDrawer from '/assets/shared/icon-hamburger.svg';
+  import CloseDrawer from '/assets/shared/icon-close.svg';
   import { ref, computed, onMounted, onUnmounted } from 'vue';
 
   const drawer = ref(false);
