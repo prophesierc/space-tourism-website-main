@@ -8,7 +8,7 @@ export function FetchAPI()
     {
         try 
         {
-            const response = await fetch(`/data${endpoint}.json`, {
+            const response = await fetch(import.meta.env.BASE_URL + `data${endpoint}.json`, {
                 method: 'GET',
               });   
 
