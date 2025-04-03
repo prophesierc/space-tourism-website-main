@@ -13,18 +13,12 @@
 </template>
 
 <script setup>
-  import { defineAsyncComponent } from 'vue';
+  // import { defineAsyncComponent } from 'vue';
   defineOptions({ name: 'HomeLayout' });
 
-  const NavBar = defineAsyncComponent(() => 
-   import('@/Components/General/NavBar.vue'));
-
-  const ImageHandler = defineAsyncComponent(() => 
-    import('@/Components/General/ImageHandler.vue')); 
-
-  const HomeContent = defineAsyncComponent(() =>
-    import('@/Components/HomeComponents/HomeContent.vue')
-  );
+  import NavBar from '@/Components/General/NavBar.vue';
+  import ImageHandler from '@/Components/General/ImageHandler.vue';
+  import HomeContent from '@/Components/HomeComponents/HomeContent.vue';
 
   // ImageHandler prop images
   import BackgroundHomeMobile from '/assets/home/background-home-mobile.jpg';

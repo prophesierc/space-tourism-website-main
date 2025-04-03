@@ -15,16 +15,12 @@
 
 <script setup>
   defineOptions({ name: 'DestinationLayout' });
-  import { defineAsyncComponent } from 'vue';
+  // import { defineAsyncComponent } from 'vue';
 
-  const DestinationContentComponent = defineAsyncComponent(() => 
-    import('@/Components/DestinationComponents/DestinationContentComponent.vue'));
+  import NavBar from '@/Components/General/NavBar.vue';
+  import DestinationContentComponent from '@/Components/DestinationComponents/DestinationContentComponent.vue';
+  import ImageHandler from '@/Components/General/ImageHandler.vue';
 
-  const NavBar = defineAsyncComponent(() => 
-    import('@/Components/General/NavBar.vue'));
-
-  const ImageHandler = defineAsyncComponent(() => 
-    import('@/Components/General/ImageHandler.vue')); 
   
   // ImageHandler prop images
   import BackgroundDestinationMobile from '/assets/destination/background-destination-mobile.jpg';
